@@ -16,7 +16,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "@xdh/my": "^0.0.17"
+    "@xdh/my": "0.0.27"
   },
   "devDependencies": {
     "@ant-design/colors": "^3.2.2",
