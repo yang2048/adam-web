@@ -17,7 +17,7 @@
     "theme": "my theme",
     "ready": "my fix && my ready",
     "route": "my route",
-    "dev": "npm run ready && npm run route watch & npm run serve -- --open",
+    "dev": "npm run ready && concurrently \"npm run serve -- --open\" \"npm run route watch\"",
     "serve": "vue-cli-service serve",
     "build": "npm run ready -- --force && npm run route build && npm run theme prod  && vue-cli-service build",
     "preview": "my preview",
