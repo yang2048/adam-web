@@ -1,44 +1,57 @@
 {
-  "name": "spa",
-  "version": "0.1.0",
+  "name": "my-web",
+  "version": "1.0.0-0",
+  "description": "前端项目工程模板",
   "private": true,
+  "sideEffects": [
+    "*.scss",
+    "*.css",
+    "*.vue",
+    "**/*/config.js",
+    "ui/lib/icons/*.js",
+    "ui/lib/charts/themes/*.js"
+  ],
   "scripts": {
     "coder": "my coder",
     "theme": "my theme",
-    "ready": "my ready",
+    "ready": "my fix && my ready",
     "route": "my route",
     "dev": "npm run ready && npm run route watch & npm run serve -- --open",
     "serve": "vue-cli-service serve",
     "build": "npm run ready -- --force && npm run route build && npm run theme prod  && vue-cli-service build",
     "preview": "my preview",
-    "server": "my server",
+    "start": "my server",
     "test:unit": "vue-cli-service test:unit",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "app": "my app",
+    "bridge": "my bridge",
+    "release": "npm run build && npm run app build"
   },
   "dependencies": {
-    "@xdh/my": "0.0.27"
+    "@xdh/my": "^4.0.0-6"
   },
   "devDependencies": {
     "@ant-design/colors": "^3.2.2",
-    "@vue/cli-plugin-babel": "^4.0.0",
-    "@vue/cli-plugin-eslint": "^4.0.0",
-    "@vue/cli-plugin-router": "^4.0.0",
-    "@vue/cli-plugin-unit-jest": "^4.0.0",
-    "@vue/cli-plugin-vuex": "^4.0.0",
-    "@vue/cli-service": "^4.0.0",
+    "@vue/cli-plugin-babel": "^4.1.2",
+    "@vue/cli-plugin-eslint": "^4.1.2",
+    "@vue/cli-plugin-router": "^4.1.2",
+    "@vue/cli-plugin-unit-jest": "^4.1.2",
+    "@vue/cli-plugin-vuex": "^4.1.2",
+    "@vue/cli-service": "^4.1.2",
     "@vue/eslint-config-standard": "^4.0.0",
     "@vue/test-utils": "1.0.0-beta.29",
     "autodll-webpack-plugin": "^0.4.2",
     "babel-eslint": "^10.0.3",
     "babel-plugin-component": "^1.1.1",
-    "core-js": "^3.3.6",
+    "concurrently": "^5.0.0",
+    "core-js": "^3.6.1",
     "eslint": "^5.16.0",
-    "eslint-plugin-vue": "^5.0.0",
+    "eslint-plugin-vue": "^5.2.3",
     "fibers": "^4.0.2",
     "jsdoc": "^3.6.3",
     "node-sass": "^4.13.0",
     "sass-loader": "^8.0.0",
-    "vue-template-compiler": "^2.6.10",
+    "vue-template-compiler": "^2.6.11",
     "vuepress": "^1.2.0"
   },
   "eslintConfig": {
@@ -88,9 +101,7 @@
       }
     ]
   },
-  "eslintIgnore": [
-    "**/icons/iconfont.js"
-  ],
+  "eslintIgnore": [],
   "postcss": {
     "plugins": {
       "autoprefixer": {}
@@ -102,5 +113,7 @@
   ],
   "jest": {
     "preset": "@vue/cli-plugin-unit-jest"
-  }
+  },
+  "typings": "node_modules/@xdh/my/types/index.d.ts",
+  "apps": {}
 }

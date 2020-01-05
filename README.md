@@ -1,29 +1,41 @@
-# demo
+# MyWeb 前端项目工程模板
 
-## Project setup
+## 项目初始化
 ```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
+npm run ready
 ```
 
-### Compiles and minifies for production
+### 构建主题样式
+```
+npm run theme
+```
+
+### 代码生成器
+```
+npm run coder
+```
+
+### 生成路由配置
+```
+npm run route
+```
+
+### 运行开发环境
+```
+npm run dev
+```
+
+### 编译主应用
 ```
 npm run build
 ```
 
-### Run your unit tests
+### 编译桥类库
 ```
-npm run test:unit
-```
-
-### Lints and fixes files
-```
-npm run lint
+npm run bridge
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### 产品发布
+```
+npm run release
+```
