@@ -12,6 +12,7 @@
     "ui/lib/charts/themes/*.js"
   ],
   "scripts": {
+    "install": "node install",
     "coder": "my coder",
     "theme": "my theme",
     "ready": "my fix && my ready",
@@ -28,7 +29,7 @@
     "release": "npm run build && npm run app build"
   },
   "dependencies": {
-    "@xdh/my": "^4.0.0-6"
+    "@xdh/my": "^4.0.0-7"
   },
   "devDependencies": {
     "@ant-design/colors": "^3.2.2",
@@ -115,5 +116,10 @@
     "preset": "@vue/cli-plugin-unit-jest"
   },
   "typings": "node_modules/@xdh/my/types/index.d.ts",
+  "install": {
+    "type": "git",
+    "branch": "master",
+    "repository": "https://gitee.com/newgateway/node_modules.git"
+  },
   "apps": {}
 }
