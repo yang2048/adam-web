@@ -1,6 +1,6 @@
 {
   "name": "my-web",
-  "version": "1.0.0-0",
+  "version": "1.0.0-1",
   "description": "前端项目工程模板",
   "private": true,
   "sideEffects": [
