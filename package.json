@@ -26,7 +26,9 @@
     "lint": "vue-cli-service lint",
     "app": "my app",
     "bridge": "my bridge",
-    "release": "npm run build && npm run app build"
+    "release": "npm run build && npm run app build",
+    "dev:shop": "npm run ready && cross-env APP=shop concurrently \"npm run serve -- --open\" \"npm run route watch shop\"",
+    "build:shop": "npm run ready && npm run route build shop && npm run theme prod && cross-env APP=shop npm run build"
   },
   "dependencies": {
     "@xdh/my": "^4.0.0-9"
@@ -121,5 +123,14 @@
     "branch": "master",
     "repository": "https://gitee.com/newgateway/node_modules.git"
   },
-  "apps": {}
+  "apps": {
+    "shop": {
+      "name": "shop",
+      "port": 8001,
+      "autoRoutes": true,
+      "publicPath": null,
+      "outputDir": null,
+      "contentBase": []
+    }
+  }
 }

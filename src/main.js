@@ -82,7 +82,7 @@ const router = new Router({
 /**
  * 注册权限控制实例
  */
-Vue.use(Access, {
+const access = new Access(Vue, {
   ...globalConfig.access,
   $router: router,
   progress
@@ -103,6 +103,7 @@ const params = {
   el: '#app',
   store,
   router,
+  access,
   AppMaster,
   apps
 }
