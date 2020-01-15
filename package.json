@@ -1,6 +1,6 @@
 {
   "name": "my-web",
-  "version": "1.0.0-2",
+  "version": "1.0.0-3",
   "description": "前端项目工程模板",
   "private": true,
   "sideEffects": [
@@ -26,12 +26,10 @@
     "lint": "vue-cli-service lint",
     "app": "my app",
     "bridge": "my bridge",
-    "release": "npm run build && npm run app build",
-    "dev:shop": "npm run ready && cross-env APP=shop concurrently \"npm run serve -- --open\" \"npm run route watch shop\"",
-    "build:shop": "npm run ready && npm run route build shop && npm run theme prod && cross-env APP=shop npm run build"
+    "release": "npm run build && npm run app build"
   },
   "dependencies": {
-    "@xdh/my": "^4.0.0-9"
+    "@xdh/my": "^4.0.0-12"
   },
   "devDependencies": {
     "@ant-design/colors": "^3.2.2",
@@ -47,13 +45,13 @@
     "babel-eslint": "^10.0.3",
     "babel-plugin-component": "^1.1.1",
     "concurrently": "^5.0.0",
-    "core-js": "^3.6.1",
+    "core-js": "^3.6.4",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.2.3",
     "fibers": "^4.0.2",
     "jsdoc": "^3.6.3",
     "node-sass": "^4.13.0",
-    "sass-loader": "^8.0.0",
+    "sass-loader": "^8.0.2",
     "vue-template-compiler": "^2.6.11",
     "vuepress": "^1.2.0"
   },
@@ -123,14 +121,5 @@
     "branch": "master",
     "repository": "https://gitee.com/newgateway/node_modules.git"
   },
-  "apps": {
-    "shop": {
-      "name": "shop",
-      "port": 8001,
-      "autoRoutes": true,
-      "publicPath": null,
-      "outputDir": null,
-      "contentBase": []
-    }
-  }
+  "apps": {}
 }
