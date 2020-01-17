@@ -29,7 +29,7 @@
     "release": "npm run build && npm run app build"
   },
   "dependencies": {
-    "@xdh/my": "^4.0.0-17"
+    "@xdh/my": "^4.0.0-18"
   },
   "devDependencies": {
     "@ant-design/colors": "^3.2.2",
