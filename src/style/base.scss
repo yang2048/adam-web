@@ -1,5 +1,7 @@
 @import "vars";
 
+@include scroll-bar();
+
 html, body {
   margin: 0;
   padding: 0;
@@ -17,7 +19,6 @@ body {
   line-height: $--line-height-normal;
   background: $--background;
   color: $--color-primary-text;
-  @include scroll-bar();
 }
 
 
