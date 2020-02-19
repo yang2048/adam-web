@@ -1,6 +1,6 @@
 {
   "name": "my-web",
-  "version": "1.0.0-10",
+  "version": "1.0.0-11",
   "description": "前端项目工程模板",
   "private": true,
   "scripts": {
@@ -21,7 +21,7 @@
     "release": "npm run build && npm run app build"
   },
   "dependencies": {
-    "@xdh/my": "^4.0.0-23"
+    "@xdh/my": "^4.0.0-24"
   },
   "devDependencies": {
     "@ant-design/colors": "^3.2.2",
