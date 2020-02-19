@@ -1,16 +1,8 @@
 {
   "name": "my-web",
-  "version": "1.0.0-9",
+  "version": "1.0.0-10",
   "description": "前端项目工程模板",
   "private": true,
-  "sideEffects": [
-    "*.scss",
-    "*.css",
-    "*.vue",
-    "**/*/config.js",
-    "ui/lib/icons/*.js",
-    "ui/lib/charts/themes/*.js"
-  ],
   "scripts": {
     "install": "node install",
     "coder": "my coder",
@@ -29,7 +21,7 @@
     "release": "npm run build && npm run app build"
   },
   "dependencies": {
-    "@xdh/my": "^4.0.0-22"
+    "@xdh/my": "^4.0.0-23"
   },
   "devDependencies": {
     "@ant-design/colors": "^3.2.2",
