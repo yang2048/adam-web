@@ -91,7 +91,7 @@ const access = new Access(Vue, {
 /**
  * 模拟数据，生产环境不加载模拟数据
  */
-if (process.env.NODE_ENV !== 'production') {
+if (process.env.NODE_ENV !== 'production' && globalConfig.mock) {
   require('@/mock/index')
 }
 

@@ -30,6 +30,9 @@ setConfig({
   },
   mock: {
     timeout: '200-500'
+  },
+  axios: {
+    withCredentials: true
   }
 })
 
