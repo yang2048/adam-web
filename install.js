@@ -2,11 +2,11 @@ const {spawn} = require('child_process')
 const config = require('./package')
 
 if (!config.install) {
-  console.log(`package.json 缺少 install 配置`)
+  console.log('package.json 缺少 install 配置')
   return
 }
 
-let gitParams = ['clone']
+const gitParams = ['clone']
 if (config.install.branch) {
   gitParams.push('-b', config.install.branch)
 }
