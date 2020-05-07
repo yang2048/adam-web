@@ -20,7 +20,8 @@ import {
   registerApps,
   appRender,
   appStart,
-  Access
+  Access,
+  parseAppConfig
 } from '$ui/master'
 
 
@@ -105,10 +106,8 @@ const params = {
   router,
   access,
   AppMaster,
-  apps
+  apps: parseAppConfig(apps)
 }
-
-
 /**
  * 注册子应用
  */
@@ -117,12 +116,15 @@ registerApps(params)
 /**
  * 渲染主应用
  */
-appRender(params, {loading: false})
+appRender(params)
 
 /**
  * 启动前端微服务
  */
-appStart({prefetch: true, jsSandbox: true})
+appStart({prefetch: false, singular: false})
+
+
+
 
 
 

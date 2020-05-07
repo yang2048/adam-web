@@ -15,12 +15,14 @@
       <IconAction icon="el-icon-message-solid" :badge="12"></IconAction>
       <IconAction icon="icon-poweroff" svg></IconAction>
     </template>
-
+    <!--    <router-view></router-view>-->
     <my-wrapper title="参数设置"
+                back
+                fit
                 sub-title="子标题说明文字">
 
       <my-container>
-        <el-form ref="form" label-width="100px" size="small">
+        <el-form ref="form" label-width="100px" size="small" style="padding: 20px">
 
           <el-form-item label="导航模式">
             <el-radio-group v-model="mode">
@@ -70,6 +72,11 @@
           <el-form-item label="顶部彩虹边框">
             <el-switch v-model="rainbow"></el-switch>
           </el-form-item>
+          <el-form-item v-if="false" label="暗黑模式">
+            <el-switch v-model="dark"></el-switch>
+          </el-form-item>
+
+
           <el-form-item label="测试滚动条">
             <el-switch v-model="scrollEnabled"></el-switch>
           </el-form-item>
@@ -85,12 +92,16 @@
 
 <script>
   import {MyPro} from '$ui'
+  import skin from '$ui/utils/skin'
   import '$ui/icons/poweroff'
 
   const {IconAction, UserAction} = MyPro
   const mock = [
     {
-      icon: 'el-icon-setting',
+      icon: {
+        svg: true,
+        name: 'icon-poweroff'
+      },
       text: '导航菜单一',
       index: '/one',
       badge: 10
@@ -172,6 +183,7 @@
     }
   ]
   export default {
+    mixins: [skin()],
     components: {
       MyPro,
       IconAction,
@@ -191,9 +203,10 @@
         collapsible: true,
         colorWeak: false,
         rainbow: true,
-        tabEnabled: false,
+        tabEnabled: true,
         breadcrumbEnabled: false,
         scrollEnabled: false,
+        dark: false,
         items: [
           {
             text: '个人信息',
@@ -213,6 +226,14 @@
           label: '首页',
           value: '/',
           icon: 'el-icon-setting'
+        }
+      }
+    },
+    watch: {
+      dark: {
+        immediate: true,
+        handler(val) {
+          this.changeTheme(val ? 'dark' : 'default')
         }
       }
     },
