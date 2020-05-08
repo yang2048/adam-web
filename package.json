@@ -1,6 +1,6 @@
 {
   "name": "my-web",
-  "version": "1.0.0-16",
+  "version": "1.0.0-17",
   "description": "前端项目工程模板",
   "private": true,
   "sideEffects": [
@@ -31,10 +31,10 @@
     "release": "npm run build && npm run app build"
   },
   "dependencies": {
-    "@xdh/my": "^4.0.0-65"
+    "@xdh/my": "^4.0.0-66"
   },
   "devDependencies": {
-    "@ant-design/colors": "^3.2.2",
+    "@ant-design/colors": "^4.0.0",
     "@vue/cli-plugin-babel": "~4.3.1",
     "@vue/cli-plugin-eslint": "~4.3.1",
     "@vue/cli-plugin-router": "~4.3.1",
@@ -42,11 +42,12 @@
     "@vue/cli-plugin-vuex": "~4.3.1",
     "@vue/cli-service": "~4.3.1",
     "@vue/eslint-config-standard": "^5.1.0",
-    "@vue/test-utils": "1.0.0-beta.31",
+    "@vue/test-utils": "^1.0.2",
     "autodll-webpack-plugin": "^0.4.2",
     "babel-eslint": "^10.0.3",
     "babel-plugin-component": "^1.1.1",
     "concurrently": "^5.2.0",
+    "cross-env": "^7.0.2",
     "eslint": "^6.7.2",
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-node": "^11.1.0",
