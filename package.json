@@ -1,6 +1,6 @@
 {
   "name": "my-web",
-  "version": "1.0.0-19",
+  "version": "1.0.0-20",
   "description": "前端项目工程模板",
   "private": true,
   "sideEffects": [
@@ -23,7 +23,7 @@
     "serve": "vue-cli-service serve",
     "build": "npm run ready -- --force && npm run route build && npm run theme prod  && vue-cli-service build",
     "preview": "my preview",
-    "start": "my server",
+    "start": "my start",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint",
     "app": "my app",
@@ -31,16 +31,16 @@
     "release": "npm run build && npm run app build"
   },
   "dependencies": {
-    "@xdh/my": "^4.0.0-71"
+    "@xdh/my": "^4.0.0-76"
   },
   "devDependencies": {
     "@ant-design/colors": "^4.0.0",
-    "@vue/cli-plugin-babel": "~4.3.1",
-    "@vue/cli-plugin-eslint": "~4.3.1",
-    "@vue/cli-plugin-router": "~4.3.1",
-    "@vue/cli-plugin-unit-jest": "~4.3.1",
-    "@vue/cli-plugin-vuex": "~4.3.1",
-    "@vue/cli-service": "~4.3.1",
+    "@vue/cli-plugin-babel": "~4.4.1",
+    "@vue/cli-plugin-eslint": "~4.4.1",
+    "@vue/cli-plugin-router": "~4.4.1",
+    "@vue/cli-plugin-unit-jest": "~4.4.1",
+    "@vue/cli-plugin-vuex": "~4.4.1",
+    "@vue/cli-service": "~4.4.1",
     "@vue/eslint-config-standard": "^5.1.0",
     "@vue/test-utils": "^1.0.3",
     "autodll-webpack-plugin": "^0.4.2",
@@ -53,11 +53,11 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.0",
-    "eslint-plugin-vue": "^6.1.2",
+    "eslint-plugin-vue": "^6.2.2",
     "fibers": "^4.0.3",
     "jsdoc": "^3.6.4",
     "node-sass": "^4.14.1",
-    "sass-loader": "^8.0.0",
+    "sass-loader": "^8.0.2",
     "vue-template-compiler": "^2.6.11",
     "vuepress": "^1.5.0"
   },
