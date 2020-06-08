@@ -1,6 +1,6 @@
 {
   "name": "my-web",
-  "version": "1.0.0-20",
+  "version": "1.0.0-21",
   "description": "前端项目工程模板",
   "private": true,
   "sideEffects": [
@@ -27,11 +27,12 @@
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint",
     "app": "my app",
+    "page": "my page",
     "bridge": "my bridge",
     "release": "npm run build && npm run app build"
   },
   "dependencies": {
-    "@xdh/my": "^4.0.0-76"
+    "@xdh/my": "^4.0.0-79"
   },
   "devDependencies": {
     "@ant-design/colors": "^4.0.0",
