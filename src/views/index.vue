@@ -1,7 +1,15 @@
 <template>
-    <my-wrapper fit title="项目模板首页示例"></my-wrapper>
+  <div></div>
 </template>
 
 <script>
-    export default {}
+  export default {
+    created() {
+      this.$router.push('/theme/')
+    }
+  }
 </script>
+
+<style scoped>
+
+</style>
