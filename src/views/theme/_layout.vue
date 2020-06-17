@@ -4,14 +4,14 @@
       <el-radio-group size="small" v-model="type">
         <el-radio-button label="/theme/">ElementUI</el-radio-button>
         <el-radio-button label="/theme/ui/">自研组件</el-radio-button>
-        <el-radio-button label="/theme/pro">Pro</el-radio-button>
+        <!--        <el-radio-button label="/theme/pro">Pro</el-radio-button>-->
       </el-radio-group>
 
-      <el-radio-group size="small" v-model="theme" style="margin-left:20px;">
-        <el-radio-button label="default">默认</el-radio-button>
-        <el-radio-button label="dark">深色</el-radio-button>
-        <el-radio-button label="black">暗黑</el-radio-button>
-      </el-radio-group>
+      <!--      <el-radio-group size="small" v-model="theme" style="margin-left:20px;">-->
+      <!--        <el-radio-button label="default">默认</el-radio-button>-->
+      <!--        <el-radio-button label="dark">深色</el-radio-button>-->
+      <!--        <el-radio-button label="black">暗黑</el-radio-button>-->
+      <!--      </el-radio-group>-->
     </template>
     <router-view></router-view>
   </my-wrapper>
