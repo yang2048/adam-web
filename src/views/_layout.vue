@@ -1,3 +1,7 @@
+---
+access:
+- login
+---
 <template>
   <my-pro fixed
           :logo="logo"
@@ -14,6 +18,7 @@
       <UserAction :dropdown-items="dropdown"
                   username="Admin"
                   extra="超级管理员"
+                  @command="handleUserCommand"
                   :avatar="{theme: 'primary'}"></UserAction>
       <IconAction icon="el-icon-message-solid" :badge="12"></IconAction>
       <IconAction icon="el-icon-setting" @click="settingVisible=true"></IconAction>
@@ -67,10 +72,17 @@
         menus: menus,
         dropdown: [
           {
-            text: '个人信息'
+            text: '个人信息',
+            command: 'info'
           },
           {
-            text: '修改密码'
+            text: '修改密码',
+            command: 'password'
+          },
+          {
+            divided: true,
+            text: '注销登录',
+            command: 'logout'
           }
         ]
       }
@@ -79,6 +91,13 @@
       // 页面标题构建函数，可根据匹配的路由返回响应的标题名称
       createDocumentTitle(matched) {
         return matched.meta.title || 'MyWeb 4.x'
+      },
+      handleUserCommand(cmd) {
+        switch (cmd) {
+          case 'logout':
+            this.$access.logout()
+            break
+        }
       }
     }
   }
