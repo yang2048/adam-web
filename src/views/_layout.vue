@@ -26,6 +26,7 @@
 
 <script>
   import logo from '$ui/assets/police.png'
+  import '$ui/icons/poweroff.js'
   import {MyPro} from '$ui'
 
   const {IconAction, UserAction} = MyPro
@@ -34,7 +35,7 @@
     {
       icon: 'el-icon-setting',
       text: '工作台',
-      index: '/ui/pages/layout/?t=0'
+      index: '/?t=0'
     },
     {
       icon: 'el-icon-s-marketing',
@@ -44,12 +45,12 @@
         {
           icon: 'el-icon-document',
           text: '子菜单三',
-          index: '/ui/pages/layout/?t=1'
+          index: '/?t=1'
         },
         {
           icon: 'el-icon-document',
           text: '子菜单四',
-          index: '/ui/pages/layout/?t=2'
+          index: '/?t=2'
         }
       ]
     }
