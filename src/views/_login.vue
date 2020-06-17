@@ -1,6 +1,10 @@
 <template>
   <div class="bg">
-    <my-login center :login="login" @success="handleSuccess">
+    <my-login :logo="logo"
+              title="MyUI演示系统"
+              center
+              :login="login"
+              @success="handleSuccess">
       <div slot="footer">任意账号和密码可登录</div>
     </my-login>
     <Wave width="100%" height="100%"></Wave>
@@ -8,12 +12,17 @@
 </template>
 
 <script>
+  import logo from '$ui/assets/logo.png'
 
   export default {
     components: {
       Wave: () => import('$ui/components/my-wave')
     },
     props: {
+      logo: {
+        type: String,
+        default: logo
+      },
       // url查询参数名称
       urlQueryName: {
         type: String,
