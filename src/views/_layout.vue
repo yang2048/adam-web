@@ -204,7 +204,7 @@ access:
         } else {
           // 缺省首页
           return {
-            label: '工作台1',
+            label: '工作台',
             value: '/',
             closable: false
           }
