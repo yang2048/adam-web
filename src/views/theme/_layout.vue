@@ -1,3 +1,6 @@
+---
+title: 主题样式测试
+---
 <template>
   <my-wrapper fit title="主题样式预览测试">
     <template v-slot:actions>

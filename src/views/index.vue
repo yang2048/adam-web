@@ -1,3 +1,6 @@
+---
+title: 工作台
+---
 <template>
   <my-wrapper :header="null">
     <el-row class="stat-row" :gutter="14">
@@ -31,7 +34,7 @@
             <el-radio-button label="day">日</el-radio-button>
           </el-radio-group>
         </template>
-        <my-chart-line debug :data="chartData" :settings="settings" :extend="extend"></my-chart-line>
+        <my-chart-line :data="chartData" :settings="settings" :extend="extend"></my-chart-line>
       </my-panel>
     </el-row>
     <el-row :gutter="14">
@@ -99,7 +102,8 @@
             left: 50,
             right: 50,
             top: 50,
-            bottom: 30
+            bottom: 30,
+            backgroundColor: 'transparent'
           },
           yAxis: {
             splitLine: false
@@ -148,6 +152,21 @@
   .chart-row {
     margin-top: 0 !important;
     margin-bottom: 14px;
+  }
+
+  .el-row {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .my-wrapper {
+    /deep/ {
+      .my-wrapper__body {
+        padding-bottom: 0 !important;
+      }
+    }
+
   }
 
 

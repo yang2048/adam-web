@@ -1,4 +1,5 @@
 ---
+title: 首页
 access:
 - login
 ---
@@ -14,6 +15,8 @@ access:
             :collapsible="setting.collapsible"
             :rainbow="setting.rainbow"
             version="4.x"
+            :breadcrumb="createBreadcrumb"
+            :tab="setting.tab ? createTab : null"
             :document-title="createDocumentTitle">
 
       <!-- 头部工具按钮 -->
@@ -122,21 +125,23 @@ access:
             navbarTheme: skin === 'dark' ? 'dark' : 'light'
           }
         }
+        if (layout === 'navbar') {
+          return {
+            sidebarTheme: 'light',
+            navbarTheme: map[color]
+          }
+        }
+
         if (layout === 'both') {
           return {
             navbarTheme: map[color],
-            sidebarTheme: 'light'
+            sidebarTheme: skin === 'dark' ? 'dark' : 'light'
           }
         }
-        switch (color) {
-          case 'simple':
-            return {navbarTheme: 'light', sidebarTheme: 'light'}
-          case 'tech':
-            return {navbarTheme: 'dark', sidebarTheme: 'dark'}
-          case 'pro':
-            return {navbarTheme: 'black', sidebarTheme: 'black'}
-          default:
-            return {navbarTheme: 'light', sidebarTheme: 'light'}
+
+        return {
+          navbarTheme: 'light',
+          sidebarTheme: 'light'
         }
 
       }
@@ -145,13 +150,14 @@ access:
       setting(val) {
         this.changeTheme(val.skin)
         this.invert(val.invert)
-        // console.log(val)
       }
     },
     methods: {
       // 页面标题构建函数，可根据匹配的路由返回响应的标题名称
       createDocumentTitle(matched) {
-        return matched.meta.title || 'MyWeb 4.x'
+        return matched.meta.title
+          ? `${matched.meta.title} - MyWeb 4.x`
+          : 'MyWeb 4.x'
       },
       handleUserCommand(cmd) {
         switch (cmd) {
@@ -168,6 +174,40 @@ access:
       },
       invert(val) {
         val ? addClass(document.body, 'body-invert') : removeClass(document.body, 'body-invert')
+      },
+      createBreadcrumb() {
+        if (!this.setting.breadcrumb) return null
+        return this.$route.matched
+          .filter(n => n.meta.title)
+          .map(n => {
+            return {
+              label: n.meta.title,
+              to: n.path || '/'
+            }
+          })
+      },
+      createTab(fullPath, matched) {
+        if (!this.setting.tab) return null
+        if (fullPath && matched) {
+          const {icon, title, tab} = matched.meta
+          if (title || tab) {
+            return {
+              label: tab || title,
+              value: fullPath,
+              path: matched.path,
+              icon: icon,
+              closable: fullPath !== '/'
+            }
+          }
+          return null
+        } else {
+          // 缺省首页
+          return {
+            label: '工作台1',
+            value: '/',
+            closable: false
+          }
+        }
       }
     },
     created() {
@@ -176,12 +216,17 @@ access:
   }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 
-</style>
+  body {
+    &.body-invert {
+      filter: invert(90%) brightness(1.2) hue-rotate(180deg);
+    }
 
-<style>
-  body.body-invert {
-    filter: invert(90%) brightness(1.2) hue-rotate(180deg);
+    &.__MY_SKIN__dark {
+      .my-chart {
+        filter: invert(90%) brightness(1.2) hue-rotate(180deg);
+      }
+    }
   }
 </style>

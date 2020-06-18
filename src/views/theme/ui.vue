@@ -1,3 +1,6 @@
+---
+title: 自研组件主题样式测试
+---
 <template>
   <my-container>
     <StatCard></StatCard>

@@ -1,3 +1,6 @@
+---
+title: ElementUI主题样式测试
+---
 <template>
   <my-container>
     <Tooltip></Tooltip>
@@ -62,39 +65,40 @@
   import NavMenu from '@/components/unit/el/NavMenu'
   import PageHeader from '@/components/unit/el/PageHeader'
   import Steps from '@/components/unit/el/Steps'
-    export default {
-      components: {
-        Tooltip,
-        Timeline,
-        Drawer,
-        Dialog,
-        Collapse,
-        Carousel,
-        Card,
-        Calendar,
-        Tabs,
-        Steps,
-        Button,
-        Icon,
-        ElLink,
-        FormItem,
-        Transfer,
-        Upload,
-        Badge,
-        Pagination,
-        ElTable,
-        Progress,
-        Tag,
-        Tree,
-        Alert,
-        Loading,
-        Message,
-        Breadcrumb,
-        Dropdown,
-        NavMenu,
-        PageHeader
-      }
+
+  export default {
+    components: {
+      Tooltip,
+      Timeline,
+      Drawer,
+      Dialog,
+      Collapse,
+      Carousel,
+      Card,
+      Calendar,
+      Tabs,
+      Steps,
+      Button,
+      Icon,
+      ElLink,
+      FormItem,
+      Transfer,
+      Upload,
+      Badge,
+      Pagination,
+      ElTable,
+      Progress,
+      Tag,
+      Tree,
+      Alert,
+      Loading,
+      Message,
+      Breadcrumb,
+      Dropdown,
+      NavMenu,
+      PageHeader
     }
+  }
 </script>
 
 <style scoped>
