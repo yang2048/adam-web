@@ -13,8 +13,10 @@
 
 <script>
   import logo from '$ui/assets/logo.png'
+  import skin from '$ui/utils/skin'
 
   export default {
+    mixins: [skin()],
     components: {
       Wave: () => import('$ui/components/my-wave')
     },

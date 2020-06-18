@@ -27,6 +27,7 @@ access:
                     @command="handleUserCommand"
                     :avatar="{theme: 'primary'}"></UserAction>
         <IconAction icon="el-icon-message-solid" :badge="12"></IconAction>
+        <IconAction icon="el-icon-info" @click="handleInfo"></IconAction>
         <IconAction icon="el-icon-setting" @click="settingVisible=true"></IconAction>
       </template>
 
@@ -208,6 +209,9 @@ access:
             closable: false
           }
         }
+      },
+      handleInfo() {
+        window.location.href = 'http://newgateway.gitee.io/my/'
       }
     },
     created() {
