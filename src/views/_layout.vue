@@ -22,8 +22,8 @@ access:
       <!-- 头部工具按钮 -->
       <template v-slot:actions>
         <UserAction :dropdown-items="dropdown"
-                    username="Admin"
-                    extra="超级管理员"
+                    :username="userInfo.name"
+                    :extra="userInfo.roles[0]"
                     @command="handleUserCommand"
                     :avatar="{theme: 'primary'}"></UserAction>
         <IconAction icon="el-icon-message-solid" :badge="12"></IconAction>
@@ -53,6 +53,8 @@ access:
   import skin from '$ui/utils/skin'
   import {isEqual} from '$ui/utils/util'
   import {get, save, LOCAL} from '$ui/utils/storage'
+  import user from '$my/code/mixin/user'
+  import menus from '@/mock/menus'
 
   const {IconAction, UserAction} = MyPro
   const SETTING_CACHE_KEY = '__MY_PRO_CONFIG__'
@@ -67,21 +69,9 @@ access:
     rainbow: false,
     invert: false
   }
-  // 导航菜单数据
-  const menus = [
-    {
-      icon: 'el-icon-s-home',
-      text: '工作台',
-      index: '/'
-    },
-    {
-      icon: 'el-icon-s-marketing',
-      text: '主题样式测试',
-      index: '/theme'
-    }
-  ]
+
   export default {
-    mixins: [skin()],
+    mixins: [skin(), user],
     components: {
       MyPro,
       IconAction,
@@ -90,6 +80,7 @@ access:
     },
     data() {
       return {
+        userInfo: {},
         setting: null,
         logo: logo,
         title: 'MyUI演示系统',
@@ -163,7 +154,9 @@ access:
       handleUserCommand(cmd) {
         switch (cmd) {
           case 'logout':
-            this.$access.logout()
+            this.logout().then(r => {
+              this.$access.logout()
+            })
             break
         }
       },
@@ -216,6 +209,7 @@ access:
     },
     created() {
       this.setting = get(SETTING_CACHE_KEY, LOCAL) || defaultSetting
+      this.userInfo = this.$access.get()
     }
   }
 </script>

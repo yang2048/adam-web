@@ -1,22 +1,32 @@
 module.exports = {
   vuex: false,
-  model: [{
-    path: '/api/user',
-    columns: {
-      id: '@guid',
-      name: '@cname',
-      date: '@date(yyyy-MM-dd)'
-    }
-  }, {
-    path: '/data.json',
-    methods: false,
-    name: 'getData',
-    options: {
-      method: 'get',
-      responseType: 'blob',
-      headers: {
-        'Content-type': 'application/x-www-form-urlencoded'
+  model: [
+    {
+      path: '/api/user',
+      columns: {
+        id: '@guid',
+        name: '@cname',
+        'age|10-100': 1,
+        date: '@date(yyyy-MM-dd)'
       }
+    },
+    {
+      path: '/api/user/login',
+      name: 'login',
+      methods: false,
+      options: {
+        method: 'post'
+      },
+      template: 'login'
+    },
+    {
+      path: '/api/user/logout',
+      name: 'logout',
+      methods: false,
+      options: {
+        method: 'post'
+      },
+      template: 'logout'
     }
-  }]
+  ]
 }

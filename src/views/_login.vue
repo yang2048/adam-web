@@ -3,9 +3,12 @@
     <my-login :logo="logo"
               title="MyUI演示系统"
               center
-              :login="login"
+              :login="loginHandler"
               @success="handleSuccess">
-      <div slot="footer">任意账号和密码可登录</div>
+      <div slot="footer">
+        账号：admin / user / guest <br>
+        密码： 123456
+      </div>
     </my-login>
     <Wave width="100%" height="100%"></Wave>
   </div>
@@ -14,9 +17,10 @@
 <script>
   import logo from '$ui/assets/logo.png'
   import skin from '$ui/utils/skin'
+  import user from '$my/code/mixin/user'
 
   export default {
-    mixins: [skin()],
+    mixins: [skin(), user],
     components: {
       Wave: () => import('$ui/components/my-wave')
     },
@@ -37,16 +41,12 @@
       }
     },
     methods: {
-      login({account, password}) {
-        // todo: 根据业务实现对接登录接口
-        return new Promise((resolve, reject) => {
-          setTimeout(() => {
-            resolve({
-                id: 123,
-                token: 'abc'
-              }
-            )
-          }, 300)
+      loginHandler({account, password}) {
+        return this.login({
+          data: {
+            account,
+            password
+          }
         })
       },
       handleSuccess(res) {
