@@ -5,9 +5,9 @@
     <!-- 匹配不到子应用渲染主应用路由页面 -->
     <template v-else>
       <keep-alive>
-        <router-view v-if="$route.meta.keepAlive"></router-view>
+        <router-view v-if="keepAlive"></router-view>
       </keep-alive>
-      <router-view v-if="!$route.meta.keepAlive"></router-view>
+      <router-view v-if="!keepAlive"></router-view>
     </template>
   </div>
 </template>
@@ -19,6 +19,13 @@
     mixins: [Scale],
     props: {
       isMatchApp: Boolean
+    },
+    computed: {
+      keepAlive() {
+        const matched = this.$route.matched[0]
+        if (!matched) return false
+        return !!matched.meta.keepAlive
+      }
     }
   }
 </script>

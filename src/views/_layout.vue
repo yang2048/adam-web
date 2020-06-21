@@ -32,7 +32,10 @@ access:
       </template>
 
       <!-- 加载子路由页面 -->
-      <router-view></router-view>
+      <keep-alive>
+        <router-view v-if="$route.meta.keepAlive"></router-view>
+      </keep-alive>
+      <router-view v-if="!$route.meta.keepAlive"></router-view>
 
     </my-pro>
     <el-drawer title="设置"
@@ -50,7 +53,7 @@ access:
   import {MyPro} from '$ui'
   import Setting from '@/components/Setting'
   import {addClass, removeClass} from 'element-ui/lib/utils/dom'
-  import skin from '$ui/utils/skin'
+  // import skin from '$ui/utils/skin'
   import {isEqual} from '$ui/utils/util'
   import {get, save, LOCAL} from '$ui/utils/storage'
   import user from '$my/code/mixin/user'
@@ -71,7 +74,7 @@ access:
   }
 
   export default {
-    mixins: [skin(), user],
+    mixins: [user],
     components: {
       MyPro,
       IconAction,
@@ -140,7 +143,7 @@ access:
     },
     watch: {
       setting(val) {
-        this.changeTheme(val.skin)
+        // this.changeTheme(val.skin)
         this.invert(val.invert)
       }
     },

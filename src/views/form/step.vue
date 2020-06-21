@@ -1,5 +1,6 @@
 ---
 title: 分步表单
+keepAlive: true
 ---
 <template>
   <my-wrapper title="分布表单" fit>
