@@ -2,7 +2,7 @@
 title: 高级表单
 ---
 <template>
-  <my-wrapper ref="wrapper" title="高级表单">
+  <my-wrapper class="advance-from" ref="wrapper" title="高级表单">
     <template v-slot:extra>
       高级表单常见于一次性输入和提交大批量数据的场景。
     </template>
@@ -59,7 +59,7 @@ title: 高级表单
           </el-col>
         </el-row>
       </my-panel>
-      <my-panel title="成员管理" style="height: 500px">
+      <my-panel title="成员管理">
         <my-table class="table-form" :columns="columns" :data="form.members">
           <template v-slot:name="{$index}">
             <my-input :name="`members.${$index}.name`"
@@ -89,13 +89,13 @@ title: 高级表单
         </my-table>
       </my-panel>
     </my-form>
-    <my-affix :offset-top="10" :offset-bottom="10" :target="getTarget">
-      <div style="padding-top: 14px">
-        <my-container theme="info" border shadow class="form-footer">
-          <el-button type="primary" @click="submit">提交</el-button>
-        </my-container>
-      </div>
-    </my-affix>
+
+
+    <my-container theme="info" border shadow class="form-footer">
+      <el-button type="primary" @click="submit">提交</el-button>
+    </my-container>
+
+
   </my-wrapper>
 </template>
 
@@ -164,8 +164,21 @@ title: 高级表单
 <style lang="scss" scoped>
   @import "~@/style/_vars.scss";
 
+  .advance-from {
+    position: relative;
+    padding-bottom: 70px;
+  }
+
   .form-footer {
     text-align: right;
+    display: block;
+    background: $--background;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    padding-right: 30px;
+    z-index: 1;
   }
 
   .add-btn {
@@ -195,5 +208,6 @@ title: 高级表单
       }
     }
   }
+
 
 </style>
