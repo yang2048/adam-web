@@ -10,6 +10,7 @@ title: 高级表单
              ref="form"
              size="small"
              :model="form"
+             :rules="rules"
              @submit="handleSubmit"
              @change="handleFormChange">
 
@@ -112,6 +113,7 @@ title: 高级表单
           {label: '操作', prop: 'handle'}
         ],
         form: {
+          field1: '测试名称',
           members: [
             {
               name: 'abc',
@@ -119,6 +121,9 @@ title: 高级表单
               dept: 1
             }
           ]
+        },
+        rules: {
+          field1: {required: true}
         }
 
       }
@@ -156,6 +161,7 @@ title: 高级表单
       },
       handleSubmit(model) {
         console.log(model)
+        this.$message.success('提交成功')
       }
     }
   }
