@@ -29,7 +29,7 @@ setConfig({
     authorizePath: '/403'
   },
   mock: {
-    timeout: '200-500'
+    timeout: '50-300'
   },
   axios: {
     withCredentials: true

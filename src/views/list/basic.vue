@@ -21,6 +21,7 @@ title: 标准列表
     </my-container>
     <my-container shadow>
       <my-table ref="table"
+                toolbar
                 stripe
                 title="基本列表"
                 :columns="columns"

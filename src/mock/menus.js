@@ -38,8 +38,8 @@ export default [
       },
       {
         icon: 'el-icon-document',
-        text: '增删查改',
-        index: '/list/crud'
+        text: '卡片列表',
+        index: '/list/card'
       },
       {
         icon: 'el-icon-document',
@@ -48,8 +48,13 @@ export default [
       },
       {
         icon: 'el-icon-document',
-        text: '卡片列表',
-        index: '/list/card'
+        text: '增删查改',
+        index: '/list/crud'
+      },
+      {
+        icon: 'el-icon-document',
+        text: '树结构列表',
+        index: '/list/crud'
       }
     ]
   },
