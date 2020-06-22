@@ -93,7 +93,7 @@ keepAlive: true
 
 <style lang="scss" scoped>
   .my-form {
-    width: 60%;
+    max-width: 600px;
     margin: 30px auto;
   }
 </style>

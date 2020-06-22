@@ -53,7 +53,7 @@ access:
   import {MyPro} from '$ui'
   import Setting from '@/components/Setting'
   import {addClass, removeClass} from 'element-ui/lib/utils/dom'
-  // import skin from '$ui/utils/skin'
+  import skin from '$ui/utils/skin'
   import {isEqual} from '$ui/utils/util'
   import {get, save, LOCAL} from '$ui/utils/storage'
   import user from '$my/code/mixin/user'
@@ -74,7 +74,7 @@ access:
   }
 
   export default {
-    mixins: [user],
+    mixins: [skin(), user],
     components: {
       MyPro,
       IconAction,
@@ -143,7 +143,7 @@ access:
     },
     watch: {
       setting(val) {
-        // this.changeTheme(val.skin)
+        this.changeTheme(val.skin)
         this.invert(val.invert)
       }
     },
