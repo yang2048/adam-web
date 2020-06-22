@@ -200,6 +200,7 @@ title: 高级表单
 
     &:hover {
       border-color: $--link-hover-color;
+      color: $--color-primary;
     }
   }
 
