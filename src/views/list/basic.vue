@@ -3,7 +3,7 @@ title: 标准列表
 ---
 <template>
   <my-wrapper title="标准列表" fit>
-    <my-container class="data-stat">
+    <my-container shadow class="data-stat">
       <el-row>
         <el-col :span="8">
           <span class="title">我的代办</span>
@@ -19,8 +19,13 @@ title: 标准列表
         </el-col>
       </el-row>
     </my-container>
-    <my-container>
-      <my-table ref="table" toolbar title="基本列表" :columns="columns" :loader="loader" :show-header="false">
+    <my-container shadow>
+      <my-table ref="table"
+                stripe
+                title="基本列表"
+                :columns="columns"
+                :loader="loader"
+                :show-header="false">
         <template v-slot:actions>
           <my-form class="filter-form"
                    :model="query"
@@ -41,7 +46,7 @@ title: 标准列表
         </template>
 
         <template v-slot:name="{row}">
-          <div class="user">
+          <div class="data-item">
             <my-avatar :size="50" shape="square">{{row.name.substring(0,1)}}</my-avatar>
             <h4>{{row.name}}</h4>
             <p>{{row.title}}</p>
@@ -56,10 +61,10 @@ title: 标准列表
         <template v-slot:age="{row}">
           <el-progress :percentage="row.age"></el-progress>
         </template>
-        <template v-slot:handle>
-          <el-button type="text">编辑</el-button>
+        <template v-slot:handle="{row}">
+          <el-button type="text" @click="handleEdit(row)">编辑</el-button>
           <el-divider direction="vertical"></el-divider>
-          <el-button type="text">删除</el-button>
+          <el-button type="text" @click="handleRemove(row)">删除</el-button>
         </template>
 
       </my-table>
@@ -72,7 +77,7 @@ title: 标准列表
                :visible.sync="visible">
       <my-form size="medium"
                label-width="100px"
-               @submit="handleSubmit"
+               :on-submit="handleSubmit"
                :rules="rules"
                :model="form">
         <my-input label="任务名称" name="title"></my-input>
@@ -133,22 +138,40 @@ title: 标准列表
         })
       },
       handleAdd() {
-        this.from = {}
+        this.form = {}
         this.isEditModel = false
         this.visible = true
       },
-      handleEdit(model) {
-        this.from = model
+      handleEdit(row) {
+        this.form = row
         this.isEditModel = true
         this.visible = true
       },
+      handleRemove(row) {
+        this.$confirm('确认删除该条数据?', '提示', {type: 'warning'})
+          .then(ok => {
+            this.$message.success('删除成功')
+            this.removeUser({
+              id: row.id
+            }).then(r => {
+              this.$refs.table.refresh()
+            })
+          })
+          .catch(e => e)
+      },
       handleSubmit(model) {
-        if (this.isEditModel) {
-
-        }
-        return this.addUser({
-          data: model
-        })
+        const handler = this.isEditModel
+          ? this.updateUser({
+            data: model
+          })
+          : this.addUser({
+            data: model
+          })
+        return handler.then(res => {
+          this.visible = false
+          this.$refs.table.refresh(this.isEditModel ? null : 1)
+          return res
+        }).catch(e => e)
       }
     },
     beforeDestroy() {
@@ -156,6 +179,7 @@ title: 标准列表
     }
   }
 </script>
+
 
 <style lang="scss" scoped>
   @import "~@/style/_vars.scss";
@@ -213,7 +237,7 @@ title: 标准列表
     }
   }
 
-  .user {
+  .data-item {
     .my-avatar {
       float: left;
     }
