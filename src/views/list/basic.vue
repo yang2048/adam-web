@@ -92,10 +92,10 @@ title: 标准列表
 </template>
 
 <script>
-  import user from '$my/code/mixin/user'
+  import MockForExample from '$my/code/mixin/mock-for-example'
 
   export default {
-    mixins: [user],
+    mixins: [MockForExample],
     data() {
       return {
         query: {
@@ -130,7 +130,7 @@ title: 标准列表
         }, 300)
       },
       loader(page, limit) {
-        return this.fetchUser({
+        return this.fetchMockForExample({
           data: {
             ...this.query,
             page,
@@ -152,7 +152,7 @@ title: 标准列表
         this.$confirm('确认删除该条数据?', '提示', {type: 'warning'})
           .then(ok => {
             this.$message.success('删除成功')
-            this.removeUser({
+            this.removeMockForExample({
               id: row.id
             }).then(r => {
               this.$refs.table.refresh()
@@ -162,7 +162,7 @@ title: 标准列表
       },
       handleSubmit(model) {
         const handler = this.isEditModel
-          ? this.updateUser({
+          ? this.updateMockForExample({
             data: model
           })
           : this.addUser({

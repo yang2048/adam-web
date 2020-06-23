@@ -57,10 +57,10 @@ title: 查询列表
 </template>
 
 <script>
-  import user from '$my/code/mixin/user'
+  import MockForExample from '$my/code/mixin/mock-for-example'
 
   export default {
-    mixins: [user],
+    mixins: [MockForExample],
     data() {
       return {
         columns: [],
@@ -100,7 +100,7 @@ title: 查询列表
         ])
       },
       loader(page, limit) {
-        return this.fetchUser({
+        return this.fetchMockForExample({
           data: {
             ...this.query,
             page,

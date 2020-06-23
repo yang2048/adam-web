@@ -36,14 +36,14 @@
 
 <script>
 
-  import user from '$my/code/mixin/user'
+  import MockForExample from '$my/code/mixin/mock-for-example'
   import {MyCrud} from '$ui'
 
   export default {
-    mixins: [user],
+    mixins: [MockForExample],
     data() {
       return {
-        adapter: MyCrud.adapter.call(this, 'user'),
+        adapter: MyCrud.adapter.call(this, 'mockForExample'),
         tags: [
           {
             label: '选项1',

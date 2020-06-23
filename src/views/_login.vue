@@ -17,10 +17,10 @@
 <script>
   import logo from '$ui/assets/logo.png'
   import skin from '$ui/utils/skin'
-  import user from '$my/code/mixin/user'
+  import mockForExample from '$my/code/mixin/mock-for-example'
 
   export default {
-    mixins: [skin(), user],
+    mixins: [skin(), mockForExample],
     components: {
       Wave: () => import('$ui/components/my-wave')
     },

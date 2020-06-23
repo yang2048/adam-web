@@ -56,7 +56,7 @@ access:
   import skin from '$ui/utils/skin'
   import {isEqual} from '$ui/utils/util'
   import {get, save, LOCAL} from '$ui/utils/storage'
-  import user from '$my/code/mixin/user'
+  import MockForExample from '$my/code/mixin/mock-for-example'
   import menus from '@/mock/menus'
 
   const {IconAction, UserAction} = MyPro
@@ -74,7 +74,7 @@ access:
   }
 
   export default {
-    mixins: [skin(), user],
+    mixins: [skin(), MockForExample],
     components: {
       MyPro,
       IconAction,

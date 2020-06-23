@@ -2,7 +2,7 @@ module.exports = {
   vuex: false,
   model: [
     {
-      path: '/api/user',
+      path: '/api/mock-for-example',
       columns: {
         id: '@id',
         guid: '@guid',
@@ -21,31 +21,31 @@ module.exports = {
       }
     },
     {
-      path: '/api/user/columns',
+      path: '/api/mock-for-example/columns',
       name: 'getColumns',
       methods: false,
       options: {
         method: 'post'
       },
-      template: 'getColumns'
+      template: 'mockForExampleGetColumns'
     },
     {
-      path: '/api/user/login',
+      path: '/api/mock-for-example/login',
       name: 'login',
       methods: false,
       options: {
         method: 'post'
       },
-      template: 'login'
+      template: 'mockForExampleLogin'
     },
     {
-      path: '/api/user/logout',
+      path: '/api/mock-for-example/logout',
       name: 'logout',
       methods: false,
       options: {
         method: 'post'
       },
-      template: 'logout'
+      template: 'mockForExampleLogout'
     }
   ]
 }

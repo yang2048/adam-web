@@ -38,10 +38,10 @@ title: 卡片列表
 </template>
 
 <script>
-  import user from '$my/code/mixin/user'
+  import MockForExample from '$my/code/mixin/mock-for-example'
 
   export default {
-    mixins: [user],
+    mixins: [MockForExample],
     data() {
       return {
         list: [],
@@ -79,7 +79,7 @@ title: 卡片列表
       loader() {
         this.loading = true
         ++this.page
-        this.fetchUser({
+        this.fetchMockForExample({
           data: {
             page: this.page,
             limit: this.limit
