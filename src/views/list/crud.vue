@@ -25,8 +25,8 @@ title: 增删查改
 
       <!-- 定义工具条 -->
       <template v-slot:toolbar>
-        <el-button type="primary" size="small" @click="openAddDialog">新增</el-button>
-        <el-button type="danger" size="small" @click="batchRemove">批量删除</el-button>
+        <el-button type="primary" icon="el-icon-plus" size="small" @click="openAddDialog">新增</el-button>
+        <el-button type="danger" icon="el-icon-delete" size="small" @click="batchRemove">批量删除</el-button>
       </template>
 
       <!-- 定义新增/修改表单 -->
@@ -46,6 +46,12 @@ title: 增删查改
           <my-detail-item label="地区">{{row.county}}</my-detail-item>
           <my-detail-item label="简介">{{row.info}}</my-detail-item>
         </my-detail>
+      </template>
+
+      <!-- 自定义列内容 -->
+      <template v-slot:sex="{row}">
+        <el-tag v-if="row.sex" size="small" type="primary">男</el-tag>
+        <el-tag v-else size="small" type="success">女</el-tag>
       </template>
 
     </my-crud>
@@ -72,6 +78,10 @@ title: 增删查改
           {
             label: '身份证',
             prop: 'id'
+          },
+          {
+            label: '性别',
+            prop: 'sex'
           },
           {
             label: '出生日期',
