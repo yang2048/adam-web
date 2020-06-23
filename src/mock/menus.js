@@ -54,7 +54,7 @@ export default [
       {
         icon: 'el-icon-document',
         text: '树结构列表',
-        index: '/list/crud'
+        index: '/list/tree'
       }
     ]
   },

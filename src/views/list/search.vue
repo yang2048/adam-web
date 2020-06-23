@@ -18,6 +18,8 @@ title: 查询列表
     <my-container>
       <div class="toolbar">
         <el-button size="small" type="primary" icon="el-icon-plus">新建</el-button>
+        <el-button size="small" icon="el-icon-upload2">导入</el-button>
+        <el-button size="small" icon="el-icon-download">导出</el-button>
         <el-button v-show="selection.length" size="small">批量删除</el-button>
         <el-button v-show="selection.length" size="small">批量审核</el-button>
       </div>
