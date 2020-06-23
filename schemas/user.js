@@ -16,8 +16,18 @@ module.exports = {
         county: '@county(true)',
         zip: '@zip',
         state: '@integer(0,5)',
+        'label|1': ['黄', '毒', '赌', '逃', '前科'],
         created: '@datetime'
       }
+    },
+    {
+      path: '/api/user/columns',
+      name: 'getColumns',
+      methods: false,
+      options: {
+        method: 'post'
+      },
+      template: 'getColumns'
     },
     {
       path: '/api/user/login',

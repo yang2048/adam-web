@@ -39,3 +39,40 @@ export function logout(Mock, url, query, options) {
     data: true
   }
 }
+
+export function getColumns(Mock, url, query, options) {
+  const columns = [
+    {
+      label: '姓名',
+      prop: 'name'
+    },
+    {
+      label: '身份证',
+      prop: 'id'
+    },
+    {
+      label: '性别',
+      prop: 'sex'
+    },
+    {
+      label: '出生日期',
+      prop: 'date'
+    },
+    {
+      label: '地区',
+      prop: 'county'
+    },
+    {
+      label: '介绍',
+      prop: 'info'
+    },
+    {
+      label: '创建时间',
+      prop: 'created'
+    }
+  ]
+  return {
+    code: 0,
+    data: columns
+  }
+}

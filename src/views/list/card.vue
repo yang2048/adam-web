@@ -17,6 +17,7 @@ title: 卡片列表
                 shadow="hover"
                 :actions="actions"
                 :header="false">
+        <my-corner-mark :type="{ '逃': 'danger', '毒': 'warning'}[item.label]">{{item.label}}</my-corner-mark>
         <div class="data-item">
           <el-image :src="item.avatar" fit="cover"></el-image>
           <div class="text">
@@ -63,9 +64,6 @@ title: 卡片列表
           }
         })
       }
-    },
-    created() {
-      this.fetchUser()
     }
   }
 </script>
