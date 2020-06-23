@@ -9,26 +9,31 @@ title: 卡片列表
     <template v-slot:actions>
       <el-button type="primary" size="medium" icon="el-icon-plus">新增</el-button>
     </template>
-    <my-card-list :loader="loader"
-                  pager
-                  :page-size="12"
-                  :columns="{xs:1,sm:1,md:2,lg:2,xl:3,xxl:4}">
-      <my-panel slot-scope="{item}"
-                shadow="hover"
-                :actions="actions"
-                :header="false">
-        <my-corner-mark :type="{ '逃': 'danger', '毒': 'warning'}[item.label]">{{item.label}}</my-corner-mark>
-        <div class="data-item">
-          <el-image :src="item.avatar" fit="cover"></el-image>
-          <div class="text">
-            <my-title :level="3">{{item.name}}</my-title>
-            <my-paragraph ellipsis :rows="3">
-              {{item.info}}
-            </my-paragraph>
+    <div v-infinite-scroll="loader"
+         :infinite-scroll-disabled="disabled">
+      <my-card-list :data="list"
+                    :columns="{xs:1,sm:1,md:2,lg:2,xl:3,xxl:4}">
+        <my-panel slot-scope="{item}"
+                  shadow="hover"
+                  :actions="actions"
+                  :header="false">
+          <my-corner-mark :type="{ '逃': 'danger', '毒': 'warning'}[item.label]">{{item.label}}</my-corner-mark>
+          <div class="data-item">
+            <el-image :src="item.avatar" fit="cover"></el-image>
+            <div class="text">
+              <my-title :level="3">{{item.name}}</my-title>
+              <my-paragraph ellipsis :rows="3">
+                {{item.info}}
+              </my-paragraph>
+            </div>
           </div>
-        </div>
-      </my-panel>
-    </my-card-list>
+        </my-panel>
+      </my-card-list>
+      <div class="loading" v-if="loading">
+        <my-spin loading tip="正在努力加载..."></my-spin>
+      </div>
+      <div class="empty" v-if="noMore">没有更多了</div>
+    </div>
   </my-wrapper>
 </template>
 
@@ -39,6 +44,11 @@ title: 卡片列表
     mixins: [user],
     data() {
       return {
+        list: [],
+        page: 0,
+        limit: 15,
+        total: null,
+        loading: false,
         actions: [
           {
             text: '查看',
@@ -55,13 +65,30 @@ title: 卡片列表
         ]
       }
     },
+    computed: {
+      noMore() {
+        return this.total === null
+          ? false
+          : this.page >= Math.ceil(this.total / this.limit)
+      },
+      disabled() {
+        return this.loading || this.noMore
+      }
+    },
     methods: {
-      loader(page, limit) {
-        return this.fetchUser({
+      loader() {
+        this.loading = true
+        ++this.page
+        this.fetchUser({
           data: {
-            page,
-            limit
+            page: this.page,
+            limit: this.limit
           }
+        }).then(res => {
+          this.total = res.total
+          this.list = this.list.concat(res.list)
+        }).finally(() => {
+          this.loading = false
         })
       }
     }
@@ -69,6 +96,8 @@ title: 卡片列表
 </script>
 
 <style lang="scss" scoped>
+  @import "~@/style/_vars.scss";
+
   .data-item {
     height: 100px;
 
@@ -89,5 +118,15 @@ title: 卡片列表
     .text {
       padding-left: 130px;
     }
+  }
+
+  .loading, .empty {
+    padding: 14px;
+    text-align: center;
+  }
+
+  .empty {
+    border-top: 1px dotted $--color-divider;
+    color: $--color-secondary-text;
   }
 </style>
