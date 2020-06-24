@@ -57,7 +57,6 @@ access:
   import {isEqual} from '$ui/utils/util'
   import {get, save, LOCAL} from '$ui/utils/storage'
   import MockForExample from '$my/code/mixin/mock-for-example'
-  import menus from '@/mock/menus'
 
   const {IconAction, UserAction} = MyPro
   const SETTING_CACHE_KEY = '__MY_PRO_CONFIG__'
@@ -88,7 +87,7 @@ access:
         logo: logo,
         title: 'MyUI演示系统',
         settingVisible: false,
-        menus: menus,
+        menus: [],
         dropdown: [
           {
             text: '个人信息',
@@ -213,6 +212,9 @@ access:
     created() {
       this.setting = get(SETTING_CACHE_KEY, LOCAL) || defaultSetting
       this.userInfo = this.$access.get()
+      this.getMenus().then(res => {
+        this.menus = res
+      })
     }
   }
 </script>

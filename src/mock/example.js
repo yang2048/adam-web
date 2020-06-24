@@ -1,3 +1,4 @@
+// 模拟登录
 export function mockForExampleLogin(Mock, url, query, options) {
   const {account, password} = query
   const users = ['admin', 'user', 'guest']
@@ -19,6 +20,7 @@ export function mockForExampleLogin(Mock, url, query, options) {
   }
 }
 
+//  模拟注销登录
 export function mockForExampleLogout(Mock, url, query, options) {
   return {
     code: 0,
@@ -26,6 +28,7 @@ export function mockForExampleLogout(Mock, url, query, options) {
   }
 }
 
+// 模拟获取数据字段列表接口
 export function mockForExampleGetColumns(Mock, url, query, options) {
   const columns = [
     {
@@ -63,12 +66,20 @@ export function mockForExampleGetColumns(Mock, url, query, options) {
   }
 }
 
+// 模拟获取导航菜单接口
 export function mockForExampleGetMenus(Mock, url, query, options) {
   const menus = [
     {
       icon: 'el-icon-s-home',
-      text: '工作台',
-      index: '/'
+      text: 'Dashboard',
+      index: '/',
+      children: [
+        {
+          icon: 'el-icon-document',
+          text: '工作台',
+          index: '/'
+        }
+      ]
     },
     {
       icon: 'el-icon-edit-outline',

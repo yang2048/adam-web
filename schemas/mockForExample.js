@@ -46,6 +46,15 @@ module.exports = {
         method: 'post'
       },
       template: 'mockForExampleLogout'
+    },
+    {
+      path: '/api/mock-for-example/menus',
+      name: 'getMenus',
+      methods: false,
+      options: {
+        method: 'post'
+      },
+      template: 'mockForExampleGetMenus'
     }
   ]
 }
