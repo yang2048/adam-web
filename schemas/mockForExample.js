@@ -55,6 +55,15 @@ module.exports = {
         method: 'post'
       },
       template: 'mockForExampleGetMenus'
+    },
+    {
+      path: '/api/mock-for-example/tree',
+      name: 'getTree',
+      methods: false,
+      options: {
+        method: 'post'
+      },
+      template: 'mockForExampleGetTree'
     }
   ]
 }

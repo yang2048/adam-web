@@ -146,3 +146,27 @@ export function mockForExampleGetMenus(Mock, url, query, options) {
     data: menus
   }
 }
+
+// 模拟获取树结构数据
+export function mockForExampleGetTree(Mock, url, query, options) {
+  const {parentId, count} = query
+  const total = count || 10
+  const root = Mock.mock({
+    [`list|${total}`]: [{
+      id: '@guid',
+      parentId: function () {
+        return parentId || null
+      },
+      label: '@ctitle',
+      value: '@guid',
+      created: '@date(yyyy-MM-dd hh:mm:ss)',
+      isLeaf: false
+    }]
+  })
+
+  return {
+    code: 0,
+    data: root.list
+  }
+
+}

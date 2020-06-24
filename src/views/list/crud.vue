@@ -2,10 +2,9 @@
 title: 增删查改
 ---
 <template>
-  <my-wrapper title="增删查改" fit>
+  <my-wrapper title="增删查改">
     <template v-slot:extra>与代码生成器结合使用，快速实现通用增删查功能。</template>
-    <my-crud :fit="myPro.fixed"
-             ref="crud"
+    <my-crud ref="crud"
              title="数据表格"
              :filter="{collapsible:true,labelWidth:'60px'}"
              :table-options="{border:true, stripe:true, rowKey:'guid'}"

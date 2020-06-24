@@ -2,7 +2,7 @@
 title: 卡片列表
 ---
 <template>
-  <my-wrapper title="卡片列表" fit>
+  <my-wrapper title="卡片列表">
     <template v-slot:extra>
       卡片类型的列表，配合栅格实现响应式布局。
     </template>
