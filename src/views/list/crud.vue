@@ -4,7 +4,7 @@ title: 增删查改
 <template>
   <my-wrapper title="增删查改" fit>
     <template v-slot:extra>与代码生成器结合使用，快速实现通用增删查功能。</template>
-    <my-crud fit
+    <my-crud :fit="myPro.fixed"
              ref="crud"
              title="数据表格"
              :filter="{collapsible:true,labelWidth:'60px'}"
@@ -64,6 +64,7 @@ title: 增删查改
 
   export default {
     mixins: [MockForExample],
+    inject: ['myPro'],
     data() {
       return {
         adapter: MyCrud.adapter.call(this, 'MockForExample'),
