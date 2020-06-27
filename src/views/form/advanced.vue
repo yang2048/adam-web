@@ -185,6 +185,7 @@ title: 高级表单
     left: 0;
     padding-right: 30px;
     z-index: 1;
+    opacity: 0.85;
   }
 
   .add-btn {

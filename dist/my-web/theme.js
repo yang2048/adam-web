@@ -1,1 +1,1 @@
-(function(global){global.__MY_THEMES__={"dark":"/my-web/assets/css/dark-style.6b423d04.css"}})(window)
+(function(global){global.__MY_THEMES__={"dark":"/my-web/assets/css/dark-style.34045d35.css"}})(window)
