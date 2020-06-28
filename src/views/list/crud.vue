@@ -25,6 +25,8 @@ title: 增删查改
       <!-- 定义工具条 -->
       <template v-slot:toolbar>
         <el-button type="primary" icon="el-icon-plus" size="small" @click="openAddDialog">新增</el-button>
+        <el-button size="small" icon="el-icon-upload2">导入</el-button>
+        <el-button size="small" icon="el-icon-download">导出</el-button>
         <el-button type="danger" icon="el-icon-delete" size="small" @click="batchRemove">批量删除</el-button>
       </template>
 

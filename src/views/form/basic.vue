@@ -6,7 +6,7 @@ title: 基础表单
     <template v-slot:extra>
       表单页用于向用户收集或验证信息，基础表单常见于数据项较少的表单场景。
     </template>
-    <my-panel theme="border-top" title="发布文章" size="large">
+    <my-panel theme="border-top" title="发布文章" size="large" shadow="never" :border="false">
       <my-form label-width="100px"
                :model="form"
                :rules="rules"

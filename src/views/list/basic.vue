@@ -3,7 +3,7 @@ title: 标准列表
 ---
 <template>
   <my-wrapper title="标准列表" fit>
-    <my-container shadow class="data-stat">
+    <my-container class="data-stat" :border="false">
       <el-row>
         <el-col :span="8">
           <span class="title">我的代办</span>
@@ -19,7 +19,7 @@ title: 标准列表
         </el-col>
       </el-row>
     </my-container>
-    <my-container shadow>
+    <my-container :border="false">
       <my-table ref="table"
                 toolbar
                 stripe

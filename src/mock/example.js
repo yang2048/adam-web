@@ -136,6 +136,62 @@ export function mockForExampleGetMenus(Mock, url, query, options) {
       ]
     },
     {
+      text: '详情页面',
+      index: '/profile',
+      icon: 'el-icon-monitor',
+      children: [
+        {
+          icon: 'el-icon-document',
+          text: '基础详情页',
+          index: '/profile/basic'
+        },
+        {
+          icon: 'el-icon-document',
+          text: '高级详情页',
+          index: '/profile/advanced'
+        }
+      ]
+    },
+    {
+      text: '结果页面',
+      index: '/result',
+      icon: 'el-icon-circle-check',
+      children: [
+        {
+          icon: 'el-icon-document',
+          text: '成功页',
+          index: '/result/success'
+        },
+        {
+          icon: 'el-icon-document',
+          text: '失败页',
+          index: '/result/fail'
+        }
+      ]
+    },
+    {
+      text: '异常页面',
+      index: '/exception',
+      icon: 'el-icon-warning-outline',
+      children: [
+        {
+          icon: 'el-icon-document',
+          text: '403',
+          index: '/exception/403'
+        },
+        {
+          icon: 'el-icon-document',
+          text: '404',
+          index: '/exception/404'
+        },
+        {
+          icon: 'el-icon-document',
+          text: '500',
+          index: '/exception/500'
+        }
+      ]
+    },
+    {
       icon: 'el-icon-s-marketing',
       text: '主题样式测试',
       index: '/theme'

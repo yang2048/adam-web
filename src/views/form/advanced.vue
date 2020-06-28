@@ -14,7 +14,7 @@ title: 高级表单
              @submit="handleSubmit"
              @change="handleFormChange">
 
-      <my-panel theme="border-left" title="仓库管理">
+      <my-panel theme="border-left" title="仓库管理" shadow="never" :border="false">
         <el-row :gutter="24">
           <el-col :span="6" :xs="24" :sm="12" :md="8" :lg="6">
             <my-input name="field1" label="仓库名"></my-input>
@@ -38,7 +38,7 @@ title: 高级表单
           </el-col>
         </el-row>
       </my-panel>
-      <my-panel theme="border-left" title="任务管理">
+      <my-panel theme="border-left" title="任务管理" shadow="never" :border="false">
         <el-row :gutter="24">
           <el-col :span="6" :xs="24" :sm="12" :md="8" :lg="6">
             <my-input name="field7" label="任务名"></my-input>
@@ -60,7 +60,7 @@ title: 高级表单
           </el-col>
         </el-row>
       </my-panel>
-      <my-panel theme="border-left" title="成员管理">
+      <my-panel theme="border-left" title="成员管理" shadow="never" :border="false">
         <my-table class="table-form" :columns="columns" :data="form.members">
           <template v-slot:name="{$index}">
             <my-input :name="`members.${$index}.name`"
