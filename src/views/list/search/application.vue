@@ -50,7 +50,7 @@ title: 搜索列表（应用）
               </my-description>
             </my-float-item>
             <my-float-item float="right">
-              <my-description top title="活跃用户">
+              <my-description top title="新增用户">
                 <my-title :level="2">{{item.views}}</my-title>
               </my-description>
             </my-float-item>

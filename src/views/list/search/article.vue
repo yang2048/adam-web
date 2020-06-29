@@ -32,24 +32,21 @@ title: 搜索列表（文章）
     <my-container>
       <my-list ref="list" :loader="loader" split :pagination="{align:'center'}">
         <template v-slot="{item}">
-          <my-description :width="240" :gutter="20">
-            <el-image slot="title" :src="item.avatar" fit="cover" style="width:100%; height:200px;"></el-image>
-            <my-title :level="4">
-              <el-link type="primary">
-                {{item.title}}
-              </el-link>
-            </my-title>
-            <my-paragraph>
-              <el-tag v-for="(tag,index) in item.tags"
-                      :key="`${tag}-${index}`"
-                      type="success"
-                      size="small">{{tag}}
-              </el-tag>
-            </my-paragraph>
-            <my-paragraph ellipsis :rows="2">{{item.info}}</my-paragraph>
-            <my-description inline title="作者：" :gutter="0">{{item.name}}</my-description>
-            <my-description inline title="发布时间：" :gutter="0">{{item.created}}</my-description>
-          </my-description>
+          <my-title :level="4">
+            <el-link type="primary">
+              {{item.title}}
+            </el-link>
+          </my-title>
+          <my-paragraph>
+            <el-tag v-for="(tag,index) in item.tags"
+                    :key="`${tag}-${index}`"
+                    type="success"
+                    size="small">{{tag}}
+            </el-tag>
+          </my-paragraph>
+          <my-paragraph ellipsis :rows="2">{{item.info}}</my-paragraph>
+          <my-description inline title="作者：" :gutter="0">{{item.name}}</my-description>
+          <my-description inline title="发布时间：" :gutter="0">{{item.created}}</my-description>
           <my-paragraph class="actions">
             <el-link :underline="false"><i class="el-icon-star-off"></i>{{item.views}}</el-link>
             <el-divider direction="vertical"></el-divider>
@@ -57,6 +54,7 @@ title: 搜索列表（文章）
             <el-divider direction="vertical"></el-divider>
             <el-link :underline="false"><i class="el-icon-pie-chart"></i>{{item.comments}}</el-link>
           </my-paragraph>
+
         </template>
       </my-list>
     </my-container>

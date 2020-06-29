@@ -216,6 +216,23 @@ export function mockForExampleGetMenus(Mock, url, query, options) {
       ]
     },
     {
+      text: '个人页面',
+      index: '/account',
+      icon: 'el-icon-warning-outline',
+      children: [
+        {
+          icon: 'el-icon-document',
+          text: '个人中心',
+          index: '/account/center'
+        },
+        {
+          icon: 'el-icon-document',
+          text: '个人设置',
+          index: '/account/settings'
+        }
+      ]
+    },
+    {
       icon: 'el-icon-s-marketing',
       text: '主题样式测试',
       index: '/theme'
