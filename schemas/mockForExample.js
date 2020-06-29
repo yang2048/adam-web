@@ -17,6 +17,10 @@ module.exports = {
         zip: '@zip',
         state: '@integer(0,5)',
         'label|1': ['黄', '毒', '赌', '逃', '前科'],
+        'tags|2-7': ['@cword(2,4)'],
+        views: '@integer(10,9000)',
+        shares: '@integer(10,9000)',
+        comments: '@integer(10,9000)',
         created: '@datetime'
       }
     },

@@ -41,11 +41,13 @@ export function mockForExampleGetColumns(Mock, url, query, options) {
     },
     {
       label: '性别',
-      prop: 'sex'
+      prop: 'sex',
+      filters: [{text: '男', value: 1}, {text: '女', value: 0}]
     },
     {
       label: '出生日期',
-      prop: 'date'
+      prop: 'date',
+      sortable: true
     },
     {
       label: '地区',
@@ -110,6 +112,28 @@ export function mockForExampleGetMenus(Mock, url, query, options) {
       children: [
         {
           icon: 'el-icon-document',
+          text: '搜索列表',
+          index: '/list/search',
+          children: [
+            {
+              icon: 'el-icon-document',
+              text: '搜索列表(文章)',
+              index: '/list/search/article'
+            },
+            {
+              icon: 'el-icon-document',
+              text: '搜索列表(项目)',
+              index: '/list/search/project'
+            },
+            {
+              icon: 'el-icon-document',
+              text: '搜索列表(应用)',
+              index: '/list/search/application'
+            }
+          ]
+        },
+        {
+          icon: 'el-icon-document',
           text: '标准列表',
           index: '/list/basic'
         },
@@ -121,7 +145,7 @@ export function mockForExampleGetMenus(Mock, url, query, options) {
         {
           icon: 'el-icon-document',
           text: '查询列表',
-          index: '/list/search'
+          index: '/list/query'
         },
         {
           icon: 'el-icon-document',
