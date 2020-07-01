@@ -267,3 +267,40 @@ export function mockForExampleGetTree(Mock, url, query, options) {
   }
 
 }
+
+// 模拟选项数据
+export function mockForExampleGetOptions(Mock, url, query, options) {
+  const total = 50
+  const rootCount = 6
+  let index = 0
+  const root = Mock.mock({
+    [`list|${total}`]: [{
+      id: function () {
+        return ++index
+      },
+      parentId: function () {
+        return this.id > rootCount ? Math.floor(Math.random() * this.id) : null
+      },
+      label: '@ctitle',
+      value: function () {
+        return this.id
+      }
+    }]
+  })
+
+  return {
+    code: 0,
+    data: root.list
+  }
+}
+
+// 模拟上传文件
+export function mockForExampleUpload(Mock, url, query, options) {
+  const root = Mock.mock({
+    image: '@dataImage'
+  })
+  return {
+    code: 0,
+    data: root.image
+  }
+}

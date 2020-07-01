@@ -1,52 +1,40 @@
 <template>
   <my-wrapper title="个人设置" fit>
-    <my-container fit>
-      <el-row>
-        <el-col :span="6">
-          <el-tabs class="menu-tab" tab-position="left" style="height: 100%;">
-            <el-tab-pane label="用户管理"></el-tab-pane>
-            <el-tab-pane label="配置管理"></el-tab-pane>
-            <el-tab-pane label="角色管理"></el-tab-pane>
-            <el-tab-pane label="定时任务补偿"></el-tab-pane>
-          </el-tabs>
-        </el-col>
-        <el-col :span="18"></el-col>
-      </el-row>
+    <my-tabs :tabs="tabs"
+             fit
+             :default-active="active"
+             :responsive-width="800"
+             @change="handleChange">
+      <router-view></router-view>
+    </my-tabs>
 
-    </my-container>
   </my-wrapper>
 </template>
 
 <script>
-  export default {}
-</script>
-
-<style lang="scss" scoped>
-  @import "~@/style/_vars.scss";
-
-  .el-row, .el-col {
-    height: 100%;
-  }
-
-  .menu-tab {
-    margin-left: -14px;
-
-    /deep/ {
-      .el-tabs__header {
-        width: 100%;
+  export default {
+    data() {
+      return {
+        active: this.$route.path,
+        tabs: [
+          {name: '/account/settings', label: '基本设置'},
+          {name: '/account/settings/safe', label: '安全设置'},
+          {name: '/account/settings/account', label: '账号绑定'},
+          {name: '/account/settings/message', label: '新消息通知'}
+        ]
       }
-
-      .el-tabs__item {
-        text-align: left !important;
-      }
-
-      .el-tabs__item.is-active {
-        background: $--color-primary-light-10;
-      }
-
-      .el-tabs__active-bar {
-        width: 4px !important;
+    },
+    methods: {
+      handleChange(name) {
+        this.$router.push(name)
       }
     }
   }
+</script>
+
+<style lang="scss" scoped>
+  .my-form {
+    padding-left: 30px;
+  }
+
 </style>
