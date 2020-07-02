@@ -78,8 +78,18 @@ export function mockForExampleGetMenus(Mock, url, query, options) {
       children: [
         {
           icon: 'el-icon-document',
+          text: '分析页',
+          index: '/dashboard/analysis'
+        },
+        {
+          icon: 'el-icon-document',
+          text: '监控页',
+          index: '/dashboard/monitor'
+        },
+        {
+          icon: 'el-icon-document',
           text: '工作台',
-          index: '/'
+          index: '/dashboard/workplace'
         }
       ]
     },
@@ -218,7 +228,7 @@ export function mockForExampleGetMenus(Mock, url, query, options) {
     {
       text: '个人页面',
       index: '/account',
-      icon: 'el-icon-warning-outline',
+      icon: 'el-icon-s-custom',
       children: [
         {
           icon: 'el-icon-document',

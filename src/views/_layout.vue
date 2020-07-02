@@ -85,7 +85,7 @@ access:
         userInfo: {},
         setting: null,
         logo: logo,
-        title: 'MyUI演示系统',
+        title: 'MyUI Pro',
         settingVisible: false,
         menus: [],
         dropdown: [
@@ -155,6 +155,12 @@ access:
       },
       handleUserCommand(cmd) {
         switch (cmd) {
+          case 'info':
+            this.$router.push('/account/center')
+            break
+          case 'password':
+            this.$router.push('/account/settings')
+            break
           case 'logout':
             this.logout().then(r => {
               this.$access.logout()
@@ -192,15 +198,15 @@ access:
               value: fullPath,
               path: matched.path,
               icon: icon,
-              closable: fullPath !== '/'
+              closable: fullPath !== '/dashboard/analysis'
             }
           }
           return null
         } else {
           // 缺省首页
           return {
-            label: '工作台',
-            value: '/',
+            label: '分析页',
+            value: '/dashboard/analysis',
             closable: false
           }
         }
