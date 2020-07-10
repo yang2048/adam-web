@@ -1,0 +1,1 @@
+(function(global){global.__MY_THEMES_suit__={"dark":"/my-web/suit/assets/css/dark-style.4ce85179.css"}})(window)
