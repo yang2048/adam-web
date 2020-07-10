@@ -23,10 +23,6 @@ import autoRoutesFactory from '$my/routes/index'
  */
 import vuexOptions from '@/store/index'
 
-/**
- * 根组件
- */
-import AppMaster from './AppMaster'
 
 /**
  * 项目样式文件
@@ -93,9 +89,7 @@ const params = {
   el: '#app',
   store,
   router,
-  access,
-  scale: globalConfig.scale,
-  AppMaster
+  access
 }
 
 // 开启了微应用服务

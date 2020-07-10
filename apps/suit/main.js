@@ -14,15 +14,9 @@ import globalConfig from '$ui/config'
 import {Vuex, getView, progress, createMicroApp} from '$ui/app'
 
 /**
- * 根组件
- */
-import App from './App'
-
-/**
  *  基础通用样式
  */
 import '@/style/index.scss'
-
 
 /**
  * 项目自定义的路由, 手动写的
@@ -62,7 +56,6 @@ const microApp = createMicroApp({
   el: '#app',
   config: globalConfig,
   routes,
-  App,
   store,
   progress
 })

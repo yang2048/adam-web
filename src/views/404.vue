@@ -6,7 +6,7 @@
   export default {
     inject: {
       myPro: {default: null},
-      appMaster: {default: null}
+      masterApp: {default: null}
     },
     watch: {
       $route: {
@@ -19,7 +19,7 @@
     methods: {
       addTab() {
         let label = '404'
-        const matchApp = this.appMaster?.matchApp
+        const matchApp = this.masterApp?.matchApp
         if (matchApp) {
           label = matchApp.props?.title || '子应用'
         }

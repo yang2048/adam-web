@@ -28,11 +28,6 @@ setConfig({
     // 权限不足页面路径
     authorizePath: '/403'
   },
-  microApp: {
-    prefetch: false,
-    singular: true,
-    sandbox: process.env.NODE_ENV === 'production'
-  },
   analysis: true
 })
 
