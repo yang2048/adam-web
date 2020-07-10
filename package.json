@@ -1,6 +1,6 @@
 {
   "name": "my-web",
-  "version": "1.0.0-27",
+  "version": "1.0.0-29",
   "description": "前端项目工程模板",
   "private": true,
   "sideEffects": [
@@ -29,10 +29,12 @@
     "app": "my app",
     "page": "my page",
     "bridge": "my bridge",
-    "release": "npm run build && npm run app build"
+    "release": "npm run build && npm run app build",
+    "dev:suit": "npm run ready && cross-env APP=suit concurrently \"npm run serve -- --open\" \"npm run route watch suit\"",
+    "build:suit": "npm run ready && npm run route build suit && npm run theme prod suit && cross-env APP=suit npm run build"
   },
   "dependencies": {
-    "@xdh/my": "^4.0.0-92"
+    "@xdh/my": "^4.0.0-98"
   },
   "devDependencies": {
     "@ant-design/colors": "^4.0.1",
@@ -128,5 +130,16 @@
     "branch": "master",
     "repository": "https://gitee.com/newgateway/node_modules.git"
   },
-  "apps": {}
+  "apps": {
+    "suit": {
+      "name": "suit",
+      "port": 8001,
+      "autoRoutes": true,
+      "publicPath": null,
+      "outputDir": null,
+      "staticConfig": false,
+      "mock": false,
+      "contentBase": []
+    }
+  }
 }

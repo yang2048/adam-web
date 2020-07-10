@@ -9,23 +9,6 @@ import './config'
 import globalConfig from '$ui/config'
 
 /**
- * 主应用增强
- */
-import {
-  Vue,
-  Vuex,
-  Router,
-  getView,
-  progress,
-  registerApps,
-  appRender,
-  appStart,
-  Access,
-  parseAppConfig
-} from '$ui/master'
-
-
-/**
  * 项目自定义的路由, 手动写的
  */
 import routesFactory from '@/router/routes'
@@ -41,19 +24,29 @@ import autoRoutesFactory from '$my/routes/index'
 import vuexOptions from '@/store/index'
 
 /**
- * 前端微服务的子应用容器组件，访问的路由与注册的子应用匹配时才加载
+ * 根组件
  */
 import AppMaster from './AppMaster'
-
-/**
- * 需要注册的子应用列表
- */
-import apps from './apps'
 
 /**
  * 项目样式文件
  */
 import '@/style/index.scss'
+
+
+/**
+ * 主应用增强
+ */
+const {
+  Vue,
+  Vuex,
+  Router,
+  getView,
+  progress,
+  Access,
+  appRender
+} = require('$ui/index')
+
 
 /**
  * 全局共享数据 Vuex实例
@@ -92,40 +85,45 @@ const access = new Access(Vue, {
 /**
  * 模拟数据，生产环境不加载模拟数据
  */
-// if (process.env.NODE_ENV !== 'production' && globalConfig.mock) {
-//   require('@/mock/index')
-// }
-require('@/mock/index')
+if (process.env.MY_MOCK === 'true') {
+  require('@/mock/index')
+}
 
-/**
- * 应用渲染需要用到的参数选项
- * @type {*}
- */
 const params = {
   el: '#app',
   store,
   router,
   access,
-  AppMaster,
-  apps: parseAppConfig(apps)
+  scale: globalConfig.scale,
+  AppMaster
 }
-/**
- * 注册子应用
- */
-registerApps(params)
 
-/**
- * 渲染主应用
- */
-appRender(params)
+// 开启了微应用服务
+if (process.env.MY_MICRO_APP === 'true') {
+  /**
+   * 注册的子应用列表
+   */
+  const apps = require('./apps').default
+  const {
+    masterRender,
+    registerApps,
+    parseAppConfig,
+    appStart
+  } = require('$ui/master')
 
-/**
- * 启动前端微服务
- */
-appStart({prefetch: false, singular: false})
+  // 解析子应用配置
+  params.apps = parseAppConfig(apps)
+  // 注册子应用
+  registerApps(params.apps)
+  // 渲染主应用
+  masterRender(params)
+  // 启动微应用服务
+  appStart(globalConfig.microApp || {})
 
-
-
+} else {
+  // 关闭了微应用服务，直接渲染根组件
+  appRender(params)
+}
 
 
 

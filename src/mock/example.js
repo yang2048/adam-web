@@ -244,8 +244,8 @@ export function mockForExampleGetMenus(Mock, url, query, options) {
     },
     {
       icon: 'el-icon-s-marketing',
-      text: '主题样式测试',
-      index: '/theme'
+      text: '组件主题',
+      index: '/suit'
     }
   ]
   return {

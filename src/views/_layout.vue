@@ -10,7 +10,7 @@ access:
             :title="title"
             :mode="setting.layout"
             :menus="menus"
-            :menu-props="{router: true}"
+            :menu-props="{router: true, uniqueOpened: true}"
             v-bind="colorTheme"
             :collapsible="setting.collapsible"
             :rainbow="setting.rainbow"

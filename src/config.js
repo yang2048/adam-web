@@ -28,11 +28,11 @@ setConfig({
     // 权限不足页面路径
     authorizePath: '/403'
   },
-  mock: {
-    timeout: '50-300'
+  microApp: {
+    prefetch: false,
+    singular: true,
+    sandbox: process.env.NODE_ENV === 'production'
   },
-  axios: {
-    withCredentials: true
-  }
+  analysis: true
 })
 

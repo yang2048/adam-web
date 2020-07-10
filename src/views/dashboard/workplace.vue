@@ -106,7 +106,7 @@ title: 工作台
         <my-panel title="团队" shadow="never" :border="false" theme="border-left">
           <my-list :data="projects" :columns="2" size="small">
             <template v-slot="{item}">
-              <my-description width="32">
+              <my-description :width="32">
                 <my-avatar :src="item.avatar"></my-avatar>
                 {{item.title}}
               </my-description>
