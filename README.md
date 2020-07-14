@@ -9,6 +9,21 @@ MyWeb 是一个企业级中后台前端/设计解决方案，基于[MyUI4.x](htt
 - [在线文档](http://newgateway.gitee.io/my/)
 
 ## 预览
+![1](http://newgateway.gitee.io/my-web/preview/1.png)
+
+![2](http://newgateway.gitee.io/my-web/preview/2.png)
+
+![3](http://newgateway.gitee.io/my-web/preview/3.png)
+
+![4](http://newgateway.gitee.io/my-web/preview/4.png)
+
+![5](http://newgateway.gitee.io/my-web/preview/5.png)
+
+![6](http://newgateway.gitee.io/my-web/preview/6.png)
+
+![7](http://newgateway.gitee.io/my-web/preview/7.png)
+
+![8](http://newgateway.gitee.io/my-web/preview/8.png)
 
 ## 安装
 ```
