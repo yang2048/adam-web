@@ -1,5 +1,5 @@
 ---
-title: 403
+title: 未授权访问
 ---
 <template>
   <my-result status="403"

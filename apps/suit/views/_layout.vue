@@ -2,7 +2,7 @@
 title: 主题样式测试
 ---
 <template>
-  <my-wrapper fit title="主题样式预览测试3">
+  <my-wrapper fit title="主题样式预览">
     <template v-slot:actions>
       <el-radio-group size="small" v-model="type">
         <el-radio-button label="/suit">ElementUI</el-radio-button>

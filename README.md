@@ -1,41 +1,37 @@
-# MyWeb 前端项目工程模板
+# 开始使用
+MyWeb 是一个企业级中后台前端/设计解决方案，基于[MyUI4.x](http://newgateway.gitee.io/my/)。
+致力于在设计规范和基础组件的基础上，继续向上构建，提炼出典型模板/业务组件/配套设计资源，进一步提升企业级中后台产品设计研发过程中的『用户』和『设计者』的体验.
+随着『设计者』的不断反馈，我们将持续迭代，逐步沉淀和总结出更多设计模式和相应的代码实现，阐述中后台产品模板/组件/业务场景的最佳实践，也十分期待你的参与和共建。
 
-## 项目初始化
-```
-npm run ready
-```
+我们基于上述目标和提供了以下的典型模板，并据此构建了一套基于 Vue 的中后台管理控制台的项目工程模板，它可以帮助你快速搭建企业级中后台产品原型。
 
-### 构建主题样式
-```
-npm run theme
-```
+- [演示站点](http://newgateway.gitee.io/my-web/)
+- [在线文档](http://newgateway.gitee.io/my/)
 
-### 代码生成器
-```
-npm run coder
-```
+## 预览
 
-### 生成路由配置
+## 安装
 ```
-npm run route
+npm install
 ```
 
-### 运行开发环境
+
+## 启动文档站点
+```
+npm run start
+```
+
+## 运行开发环境
 ```
 npm run dev
 ```
 
-### 编译主应用
+## 编译主应用
 ```
 npm run build
 ```
 
-### 编译桥类库
-```
-npm run bridge
-```
+## 反馈、交流钉钉群
 
-### 产品发布
-```
-npm run release
-```
+![info](http://newgateway.gitee.io/my/img/dingtalk.png)
+

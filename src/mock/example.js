@@ -4,6 +4,11 @@ export function mockForExampleLogin(Mock, url, query, options) {
   const users = ['admin', 'user', 'guest']
   const psw = '123456'
   const isValid = users.includes(account) && password === psw
+  const canMap = {
+    admin: ['view', 'add', 'update', 'remove'],
+    user: ['view', 'update', 'add'],
+    guest: ['view']
+  }
   return {
     code: isValid ? 0 : -1,
     data: isValid
@@ -11,7 +16,8 @@ export function mockForExampleLogin(Mock, url, query, options) {
         id: '@guid',
         name: account.toUpperCase(),
         token: '@guid',
-        roles: [account]
+        roles: [account],
+        can: canMap[account]
       })
       : null,
     msg: isValid
@@ -243,9 +249,43 @@ export function mockForExampleGetMenus(Mock, url, query, options) {
       ]
     },
     {
-      icon: 'el-icon-s-marketing',
-      text: '组件主题',
-      index: '/suit'
+      icon: 'el-icon-menu',
+      text: '微应用',
+      index: '/suit',
+      children: [
+        {
+          icon: 'el-icon-document',
+          text: '组件主题测试',
+          index: '/suit'
+        }
+      ]
+    },
+    {
+      icon: 'el-icon-s-check',
+      text: '权限控制',
+      index: '/access',
+      children: [
+        {
+          icon: 'el-icon-document',
+          text: '视图鉴权',
+          index: '/access'
+        },
+        {
+          icon: 'el-icon-document',
+          text: '路由鉴权(admin)',
+          index: '/access/admin'
+        },
+        {
+          icon: 'el-icon-document',
+          text: '路由鉴权(user)',
+          index: '/access/user'
+        },
+        {
+          icon: 'el-icon-document',
+          text: '路由鉴权(guest)',
+          index: '/access/guest'
+        }
+      ]
     }
   ]
   return {
