@@ -80,7 +80,7 @@ export function mockForExampleGetMenus(Mock, url, query, options) {
     {
       icon: 'el-icon-s-home',
       text: 'Dashboard',
-      index: '/',
+      index: '/dashboard',
       children: [
         {
           icon: 'el-icon-document',
@@ -128,28 +128,6 @@ export function mockForExampleGetMenus(Mock, url, query, options) {
       children: [
         {
           icon: 'el-icon-document',
-          text: '搜索列表',
-          index: '/list/search',
-          children: [
-            {
-              icon: 'el-icon-document',
-              text: '搜索列表(文章)',
-              index: '/list/search/article'
-            },
-            {
-              icon: 'el-icon-document',
-              text: '搜索列表(项目)',
-              index: '/list/search/project'
-            },
-            {
-              icon: 'el-icon-document',
-              text: '搜索列表(应用)',
-              index: '/list/search/application'
-            }
-          ]
-        },
-        {
-          icon: 'el-icon-document',
           text: '标准列表',
           index: '/list/basic'
         },
@@ -172,6 +150,28 @@ export function mockForExampleGetMenus(Mock, url, query, options) {
           icon: 'el-icon-document',
           text: '树结构列表',
           index: '/list/tree'
+        },
+        {
+          icon: 'el-icon-document',
+          text: '搜索列表',
+          index: '/list/search',
+          children: [
+            {
+              icon: 'el-icon-document',
+              text: '搜索列表(文章)',
+              index: '/list/search/article'
+            },
+            {
+              icon: 'el-icon-document',
+              text: '搜索列表(项目)',
+              index: '/list/search/project'
+            },
+            {
+              icon: 'el-icon-document',
+              text: '搜索列表(应用)',
+              index: '/list/search/application'
+            }
+          ]
         }
       ]
     },

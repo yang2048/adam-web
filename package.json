@@ -1,6 +1,6 @@
 {
   "name": "my-web",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "前端项目工程模板",
   "private": true,
   "sideEffects": [
@@ -34,35 +34,35 @@
     "build:suit": "npm run ready && npm run route build suit && npm run theme prod suit && cross-env APP=suit npm run build"
   },
   "dependencies": {
-    "@xdh/my": "^4.0.1"
+    "@xdh/my": "^4.1.0"
   },
   "devDependencies": {
-    "@ant-design/colors": "^4.0.1",
-    "@vue/cli-plugin-babel": "^4.4.6",
-    "@vue/cli-plugin-eslint": "^4.4.6",
-    "@vue/cli-plugin-router": "^4.4.6",
-    "@vue/cli-plugin-unit-jest": "^4.4.6",
-    "@vue/cli-plugin-vuex": "^4.4.6",
-    "@vue/cli-service": "^4.4.6",
+    "@ant-design/colors": "^4.0.5",
+    "@vue/cli-plugin-babel": "^4.5.6",
+    "@vue/cli-plugin-eslint": "^4.5.6",
+    "@vue/cli-plugin-router": "^4.5.6",
+    "@vue/cli-plugin-unit-jest": "^4.5.6",
+    "@vue/cli-plugin-vuex": "^4.5.6",
+    "@vue/cli-service": "^4.5.6",
     "@vue/eslint-config-standard": "^5.1.0",
-    "@vue/test-utils": "^1.0.3",
+    "@vue/test-utils": "^1.1.0",
     "autodll-webpack-plugin": "^0.4.2",
     "babel-eslint": "^10.0.3",
     "babel-plugin-component": "^1.1.1",
-    "concurrently": "^5.2.0",
+    "concurrently": "^5.3.0",
     "cross-env": "^7.0.2",
-    "eslint": "^6.7.2",
+    "eslint": "^7.9.0",
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.0",
     "eslint-plugin-vue": "^6.2.2",
-    "fibers": "^4.0.3",
-    "jsdoc": "^3.6.4",
+    "fibers": "^5.0.0",
+    "jsdoc": "^3.6.5",
     "node-sass": "^4.14.1",
-    "sass-loader": "^8.0.2",
-    "vue-template-compiler": "^2.6.11",
-    "vuepress": "^1.5.2"
+    "sass-loader": "^10.0.2",
+    "vue-template-compiler": "^2.6.12",
+    "vuepress": "^1.5.4"
   },
   "eslintConfig": {
     "root": true,

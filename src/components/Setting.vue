@@ -59,6 +59,12 @@
           <el-switch v-model="setting.invert"></el-switch>
         </my-float-item>
       </my-float>
+      <my-float>
+        <my-float-item>拆分菜单(仅支持上下+左右布局)</my-float-item>
+        <my-float-item float="right">
+          <el-switch v-model="setting.menusLevelSplit"></el-switch>
+        </my-float-item>
+      </my-float>
     </div>
   </my-container>
 </template>
@@ -85,7 +91,8 @@
           tab: false,
           breadcrumb: false,
           rainbow: false,
-          invert: false
+          invert: false,
+          menusLevelSplit: false
         }
       }
     },

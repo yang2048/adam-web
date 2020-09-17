@@ -9,6 +9,7 @@ access:
             :logo="logo"
             :title="title"
             :mode="setting.layout"
+            :menusLevelSplit="setting.menusLevelSplit"
             :menus="menus"
             :menu-props="{router: true, uniqueOpened: true}"
             v-bind="colorTheme"
