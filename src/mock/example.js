@@ -257,6 +257,16 @@ export function mockForExampleGetMenus(Mock, url, query, options) {
           icon: 'el-icon-document',
           text: '组件主题测试',
           index: '/suit'
+        },
+        {
+          icon: 'el-icon-document',
+          text: '地图应用',
+          index: '/map'
+        },
+        {
+          icon: 'el-icon-document',
+          text: '关系分析',
+          index: '/graph'
         }
       ]
     },

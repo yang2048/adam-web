@@ -31,7 +31,11 @@
     "bridge": "my bridge",
     "release": "npm run build && npm run app build",
     "dev:suit": "npm run ready && cross-env APP=suit concurrently \"npm run serve -- --open\" \"npm run route watch suit\"",
-    "build:suit": "npm run ready && npm run route build suit && npm run theme prod suit && cross-env APP=suit npm run build"
+    "build:suit": "npm run ready && npm run route build suit && npm run theme prod suit && cross-env APP=suit npm run build",
+    "dev:map": "npm run ready && cross-env APP=map concurrently \"npm run serve -- --open\" \"npm run route watch map\"",
+    "build:map": "npm run ready && npm run route build map && npm run theme prod map && cross-env APP=map npm run build",
+    "dev:graph": "npm run ready && cross-env APP=graph concurrently \"npm run serve -- --open\" \"npm run route watch graph\"",
+    "build:graph": "npm run ready && npm run route build graph && npm run theme prod graph && cross-env APP=graph npm run build"
   },
   "dependencies": {
     "@xdh/my": "^4.1.1"
@@ -134,6 +138,26 @@
     "suit": {
       "name": "suit",
       "port": 8001,
+      "autoRoutes": true,
+      "publicPath": null,
+      "outputDir": null,
+      "staticConfig": false,
+      "mock": false,
+      "contentBase": []
+    },
+    "map": {
+      "name": "map",
+      "port": 8002,
+      "autoRoutes": true,
+      "publicPath": null,
+      "outputDir": null,
+      "staticConfig": false,
+      "mock": false,
+      "contentBase": []
+    },
+    "graph": {
+      "name": "graph",
+      "port": 8003,
       "autoRoutes": true,
       "publicPath": null,
       "outputDir": null,
