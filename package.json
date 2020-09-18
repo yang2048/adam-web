@@ -38,7 +38,7 @@
     "build:graph": "npm run ready && npm run route build graph && npm run theme prod graph && cross-env APP=graph npm run build"
   },
   "dependencies": {
-    "@xdh/my": "^4.1.1"
+    "@xdh/my": "^4.1.2"
   },
   "devDependencies": {
     "@ant-design/colors": "^4.0.5",
