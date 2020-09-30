@@ -1,6 +1,6 @@
 {
   "name": "my-web",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "前端项目工程模板",
   "private": true,
   "sideEffects": [
@@ -38,7 +38,7 @@
     "build:graph": "npm run ready && npm run route build graph && npm run theme prod graph && cross-env APP=graph npm run build"
   },
   "dependencies": {
-    "@xdh/my": "^4.1.2"
+    "@xdh/my": "^4.1.3"
   },
   "devDependencies": {
     "@ant-design/colors": "^4.0.5",
