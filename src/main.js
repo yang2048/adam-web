@@ -1,6 +1,11 @@
 /**
  * 初始化运行时配置
  */
+// 支持ie
+// import 'core-js/stable';
+// import 'regenerator-runtime/runtime'
+// import 'whatwg-fetch'
+
 import './config'
 
 /**

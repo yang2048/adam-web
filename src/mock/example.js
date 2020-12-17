@@ -296,6 +296,38 @@ export function mockForExampleGetMenus(Mock, url, query, options) {
           index: '/access/guest'
         }
       ]
+    },
+    {
+      icon: 'el-icon-monitor',
+      text: '可视化大屏',
+      index: '/dv',
+      children: [
+        {
+          icon: 'el-icon-document',
+          text: '模板一',
+          index: '/dv-01'
+        },
+        {
+          icon: 'el-icon-document',
+          text: '模板二',
+          index: '/dv-02'
+        },
+        {
+          icon: 'el-icon-document',
+          text: '模板三',
+          index: '/dv-03'
+        },
+        {
+          icon: 'el-icon-document',
+          text: '模板四',
+          index: '/dv-04'
+        },
+        {
+          icon: 'el-icon-document',
+          text: '模板五',
+          index: '/dv-05'
+        }
+      ]
     }
   ]
   return {
