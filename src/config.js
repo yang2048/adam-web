@@ -20,7 +20,7 @@ setConfig({
     router: true,
 
     // 缓存存储方式 session 或 local
-    storage: 'local',
+    storage: 'session',
 
     // 登录页面路径
     loginPath: '/login',
