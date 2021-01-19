@@ -5,7 +5,8 @@
 <script>
   export default {
     created() {
-      this.$router.push('/dashboard/analysis')
+      location.href = location.pathname + '#/dashboard/analysis'
+      // this.$router.push('/dashboard/analysis')
     }
   }
 </script>

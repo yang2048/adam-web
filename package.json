@@ -38,7 +38,7 @@
     "build:graph": "npm run ready && npm run route build graph && npm run theme prod graph && cross-env APP=graph npm run build"
   },
   "dependencies": {
-    "@xdh/my": "^4.2.0-rc.3",
+    "@xdh/my": "^4.2.0-rc.4",
     "whatwg-fetch": "^3.5.0"
   },
   "devDependencies": {
