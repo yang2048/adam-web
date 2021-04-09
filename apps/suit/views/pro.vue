@@ -2,7 +2,7 @@
 
   <my-pro :menus="menus"
           :mode="mode"
-          title="MyWeb v4.x"
+          title="AdmaWeb Dev"
           :navbar-theme="navbarTheme"
           :sidebar-theme="sidebarTheme"
           :fixed="fixed"

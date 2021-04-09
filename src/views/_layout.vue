@@ -15,7 +15,7 @@ access:
             v-bind="colorTheme"
             :collapsible="setting.collapsible"
             :rainbow="setting.rainbow"
-            version="4.x"
+            version="Dev"
             :breadcrumb="createBreadcrumb"
             :tab="setting.tab ? createTab : null"
             :document-title="createDocumentTitle">
@@ -86,7 +86,7 @@ access:
         userInfo: {},
         setting: null,
         logo: logo,
-        title: 'MyUI Pro',
+        title: 'Adam Pro',
         settingVisible: false,
         menus: [],
         dropdown: [
@@ -151,8 +151,8 @@ access:
       // 页面标题构建函数，可根据匹配的路由返回响应的标题名称
       createDocumentTitle(matched) {
         return matched.meta.title
-          ? `${matched.meta.title} - MyWeb 4.x`
-          : 'MyWeb 4.x'
+          ? `${matched.meta.title} - AdmaWeb Dev`
+          : 'AdmaWeb Dev'
       },
       handleUserCommand(cmd) {
         switch (cmd) {

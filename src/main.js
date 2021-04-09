@@ -8,6 +8,7 @@
 
 import './config'
 
+import ajax from '$ui/utils/ajax';
 /**
  * 获取全局运行时配置
  */
@@ -72,6 +73,25 @@ const routes = routesFactory({get: getView}).concat(autoRoutes)
 const router = new Router({
   routes,
   ...globalConfig.router
+})
+
+router.beforeEach((to, from, next) => {
+  // 字典装载
+  if (Object.keys(store.getters.getDict()).length === 0) {
+    ajax({
+      url: '/api/sysDict/dictConfig'
+    }).then(res => {
+      if (Object.keys(res).length === 0) {
+        console.warn('字典数据未装载')
+      } else {
+        store.dispatch('dictInit', res)
+        console.warn('store装载完成')
+      }
+    }).catch(e => {
+      console.warn('字典装载异常')
+    })
+  }
+  next()
 })
 
 /**

@@ -7,6 +7,7 @@ import state from './state'
 import mutations from './mutations'
 import getters from './getters'
 import modules from '$my/code/modules'
+import dictModule from './modules/dictModule'
 
 /**
  * Vuex.Store 实例
@@ -22,7 +23,10 @@ export default {
    * modules, 由代码生成器生成， import modules from '@/base/modules'
    * @type {Object}
    */
-  modules,
+   modules: {
+    ...modules,
+    dictModule
+  },
   /**
    * 非代码生成器生成的mutations,  在  [store/mutations]{@link module:store/mutations} 中定义
    * @type {Object}

@@ -101,6 +101,38 @@ export function mockForExampleGetMenus(Mock, url, query, options) {
     },
     {
       icon: 'el-icon-edit-outline',
+      text: '系统管理',
+      index: '/system',
+      children: [
+        {
+          icon: 'el-icon-document',
+          text: '系统用户 ',
+          index: '/system/user'
+        },
+        {
+          icon: 'el-icon-document',
+          text: '角色管理',
+          index: '/system/role'
+        },
+        {
+          icon: 'el-icon-document',
+          text: '路由菜单',
+          index: '/system/menu'
+        },
+        {
+          icon: 'el-icon-document',
+          text: '系统配置',
+          index: '/system/config'
+        },
+        {
+          icon: 'el-icon-document',
+          text: '系统字典',
+          index: '/system/dict'
+        }
+      ]
+    },
+    {
+      icon: 'el-icon-edit-outline',
       text: '表单页面',
       index: '/form',
       children: [
@@ -394,5 +426,164 @@ export function mockForExampleUpload(Mock, url, query, options) {
   return {
     code: 0,
     data: root.image
+  }
+}
+
+export function mockGetMenusDemo (Mock, url, query, options) {
+  const menus = [
+    {
+      icon: 'el-icon-s-home',
+      text: '仪表盘',
+      index: '/',
+      children: [
+        {
+          icon: 'el-icon-document',
+          text: '分析页',
+          index: '/dashboard/analysis'
+        },
+        {
+          icon: 'el-icon-document',
+          text: '监控页',
+          index: '/dashboard/monitor'
+        },
+        {
+          icon: 'el-icon-document',
+          text: '工作台',
+          index: '/dashboard/workplace'
+        }
+      ]
+    },
+    {
+      icon: 'el-icon-edit-outline',
+      text: '系统管理',
+      index: '/system',
+      children: [
+        {
+          icon: 'el-icon-document',
+          text: '系统用户 ',
+          index: '/system/user'
+        },
+        {
+          icon: 'el-icon-document',
+          text: '角色管理',
+          index: '/system/role'
+        },
+        {
+          icon: 'el-icon-document',
+          text: '路由菜单',
+          index: '/system/menu'
+        },
+        {
+          icon: 'el-icon-document',
+          text: '系统配置',
+          index: '/system/config'
+        },
+        {
+          icon: 'el-icon-document',
+          text: '系统字典',
+          index: '/system/dict'
+        }
+      ]
+    },
+    {
+      icon: 'el-icon-edit-outline',
+      text: '表单页面',
+      index: '/form',
+      children: [
+        {
+          icon: 'el-icon-document',
+          text: '基础表单',
+          index: '/form/basic'
+        },
+        {
+          icon: 'el-icon-document',
+          text: '分步表单',
+          index: '/form/step'
+        },
+        {
+          icon: 'el-icon-document',
+          text: '高级表单',
+          index: '/form/advanced'
+        }
+      ]
+    },
+    {
+      icon: 'el-icon-s-grid',
+      text: '列表页面',
+      index: '/list',
+      children: [
+        {
+          icon: 'el-icon-document',
+          text: '搜索列表',
+          index: '/list/search',
+          children: [
+            {
+              icon: 'el-icon-document',
+              text: '搜索列表(文章)',
+              index: '/list/search/article'
+            },
+            {
+              icon: 'el-icon-document',
+              text: '搜索列表(项目)',
+              index: '/list/search/project'
+            },
+            {
+              icon: 'el-icon-document',
+              text: '搜索列表(应用)',
+              index: '/list/search/application'
+            }
+          ]
+        },
+        {
+          icon: 'el-icon-document',
+          text: '标准列表',
+          index: '/list/basic'
+        },
+        {
+          icon: 'el-icon-document',
+          text: '卡片列表',
+          index: '/list/card'
+        },
+        {
+          icon: 'el-icon-document',
+          text: '查询列表',
+          index: '/list/query'
+        },
+        {
+          icon: 'el-icon-document',
+          text: '增删查改',
+          index: '/list/crud'
+        },
+        {
+          icon: 'el-icon-document',
+          text: '树结构列表',
+          index: '/list/tree'
+        }
+      ]
+    },
+    {
+      text: '详情页面',
+      index: '/profile',
+      icon: 'el-icon-monitor',
+      children: [
+        {
+          icon: 'el-icon-document',
+          text: '基础详情页',
+          index: '/profile/basic'
+        },
+        {
+          icon: 'el-icon-document',
+          text: '高级详情页',
+          index: '/profile/advanced'
+        }
+      ]
+    }
+  ]
+  return {
+    code: 0,
+    data: {
+      total: menus.length,
+      list: menus
+    }
   }
 }

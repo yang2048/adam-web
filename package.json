@@ -84,6 +84,7 @@
       "vue/require-prop-type-constructor": 0,
       "vue/no-use-v-if-with-v-for": 0,
       "no-console": 0,
+      "no-debugger": 0,
       "no-trailing-spaces": 0,
       "no-multiple-empty-lines": 0,
       "no-extra-boolean-cast": 0,

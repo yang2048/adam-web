@@ -1,7 +1,7 @@
 <template>
   <div class="bg">
     <my-login :logo="logo"
-              title="MyUI演示系统"
+              title="演示系统"
               center
               :login="loginHandler"
               @success="handleSuccess">
